@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:20:25 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/04 12:22:06 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/04 17:29:49 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,15 @@ class Contact
 	Contact(void);
 	~Contact(void);	
 
+	std::string	getfirstname(void);
+	
 	private:
 	
-	
+	std::string first_name;
+	std::string last_name;
+	std::string nickname;
+	std::string	phone_nbr;
+	std::string	secret;
 };
 
 #endif

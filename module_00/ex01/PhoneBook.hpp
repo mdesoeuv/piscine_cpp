@@ -6,12 +6,14 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:52:48 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/04 12:19:10 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/04 17:18:51 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
+
+# include "Contact.hpp"
 
 class PhoneBook
 {
@@ -22,12 +24,14 @@ class PhoneBook
 	
 	
 	int	getnumber(void) const;
-	void add_contact(Contact new_contact);
+	void add_contact(void);
+	void display(void);
 	
 	private:
 
-	Contact *tab;
+	Contact tab[8];
 	int	contact_nbr;
 };
+
 
 #endif

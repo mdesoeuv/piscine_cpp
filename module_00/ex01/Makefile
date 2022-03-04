@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 11:20:30 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/04 11:58:17 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/04 17:23:22 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CC := c++
 
 CFLAGS := -Wall -Wextra -Werror -std=c++98
 
-SRCS :=	Contact.cpp
-		PhoneBook.cpp
+SRCS :=	Contact.cpp \
+		PhoneBook.cpp \
 		main.cpp
 
 OBJS := $(SRCS:.cpp=.o)
