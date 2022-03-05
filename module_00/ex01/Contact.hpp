@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:20:25 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/04 17:29:49 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/05 09:10:45 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Contact
 	~Contact(void);	
 
 	std::string	getfirstname(void);
+	void create(void);
 	
 	private:
 	
