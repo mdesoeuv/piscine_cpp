@@ -6,11 +6,11 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 11:20:30 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/07 15:38:26 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/07 16:07:42 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := MyAwesomePhoneBook
+NAME := MyLamePhoneBook
 
 CC := c++ 
 
