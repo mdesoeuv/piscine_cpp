@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:13:24 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/07 12:53:18 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/07 15:52:41 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,48 @@ void	PhoneBook::add_contact(void)
 {
 	int		index;
 
-	this->contact_nbr++;
-	index = this->contact_nbr - 1;
-	// std::cout << "index = " << index << std::endl;
-	if (index == 7)
-		this->contact_nbr = 0;
-	tab[index].create();
+	contact_nbr++;
+	index = (contact_nbr - 1) % 8;
+	if (tab[index].create() == false)
+	{
+		contact_nbr--;
+		if (contact_nbr < 0)
+			contact_nbr = 0;
+	}
+}
+
+void	PhoneBook::list_contacts(void) const
+{
+	int	i = 0;
+	int	j;
+	int	max;
+
+	if (contact_nbr > 8)
+		max = 8;
+	else
+		max = contact_nbr;
+	while (i < max)
+	{
+		j = 0;
+		while (j < 9)
+		{
+			std::cout << ' ';
+			j++;
+		}
+		std::cout << i;
+		std::cout << '|';
+		tab[i].print_field(tab[i].first_name);
+		std::cout << '|';
+		tab[i].print_field(tab[i].last_name);
+		std::cout << '|';
+		tab[i].print_field(tab[i].nickname);
+		std::cout << std::endl;
+		i++;
+	}
 }
 
 void	PhoneBook::search_contact(void)
 {
-	int	i = 0;
 	std::string	input;
 	int	index;
 	
@@ -48,11 +79,7 @@ void	PhoneBook::search_contact(void)
 		std::cout << "No contact stored" << std::endl;
 		return ;
 	}
-	while (i < this->contact_nbr)
-	{
-		std::cout << i << " | " << this->tab[i].first_name << " | " << this->tab[i].last_name << " | " << this->tab[i].nickname << std::endl;
-		i++;
-	}
+	this->list_contacts();
 	std::cout << "Input contact index number : ";
 	std::getline(std::cin, input);
 	try
@@ -67,10 +94,5 @@ void	PhoneBook::search_contact(void)
 	if (index < 0 || index > this->contact_nbr - 1)
 		std::cout << "This contact does not exist" << std::endl;
 	else
-		this->tab[index].print();
-}
-
-void	PhoneBook::display(void)
-{
-	std::cout << "First name = " << this->tab[0].first_name << std::endl;
+		this->tab[index].print_contact();
 }
