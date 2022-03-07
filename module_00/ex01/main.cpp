@@ -6,19 +6,32 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:58:26 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/05 09:11:32 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/07 12:28:21 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstring>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
 int	main(void)
 {
-	PhoneBook my_book;
+	PhoneBook 	my_book;
+	std::string	command;
+	int	finish = false;
 
-	my_book.add_contact();
-	my_book.display();
+	// std::cout << std::endl;
+	while (finish == false)
+	{
+		std::cout << "Input your command : ";
+		std::getline(std::cin, command);
+		if (command.compare("ADD") == 0)
+			my_book.add_contact();
+		else if (command.compare("SEARCH") == 0)
+			my_book.search_contact();
+		else if (command.compare("EXIT") == 0)
+			finish = true;
+	}
 	return (0);
 }
