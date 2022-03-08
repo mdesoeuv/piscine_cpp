@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:20:40 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/04 15:14:31 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 13:18:26 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	capitalize(char *s)
 
 	i = -1;
 	while (s[++i])
-		s[i] = toupper(s[i]);
+		s[i] = std::toupper(s[i]);
 }
 
 int	main(int argc, char **argv)

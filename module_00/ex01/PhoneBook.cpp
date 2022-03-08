@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:13:24 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/07 16:07:21 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 13:22:27 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	PhoneBook::list_contacts(void) const
 		}
 		std::cout << i;
 		std::cout << '|';
-		tab[i].print_field(tab[i].first_name);
+		tab[i].print_field(tab[i].getfirst_name);
 		std::cout << '|';
 		tab[i].print_field(tab[i].last_name);
 		std::cout << '|';
