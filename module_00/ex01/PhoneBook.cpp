@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:13:24 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/08 15:14:50 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 17:19:34 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	PhoneBook::search_contact(void) const
 	std::getline(std::cin, input);
 	try
 	{
-		index = std::stoi(input, NULL, 10);
+		// c++ 2011 : index = std::stoi(input, NULL, 10);
 	}
 	catch(std::invalid_argument& e)
 	{

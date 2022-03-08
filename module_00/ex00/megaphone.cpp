@@ -6,37 +6,32 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:20:40 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/08 13:18:26 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 16:58:57 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-void	capitalize(char *s)
+std::string	capitalized(const char* s)
 {
-	int	i;
-
-	i = -1;
-	while (s[++i])
-		s[i] = std::toupper(s[i]);
+	std::string result(s);
+	
+	for (size_t i = 0; i < result.length(); ++i)
+		result[i] = std::toupper(result[i]);
+		
+	return result;
 }
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	
 	if (argc == 1)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
-	i = 1;
-	while (i < argc)
-	{
-		capitalize(argv[i]);
-		std::cout << argv[i];
-		i++;
-	}
+	for (size_t i = 0; i < argc; ++i)
+		std::cout << capitalized(argv[i]);
+	
 	std::cout << std::endl;
 	return (0);
 }
