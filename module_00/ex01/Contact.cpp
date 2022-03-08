@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 08:48:59 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/08 16:38:52 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 16:44:07 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,45 +50,35 @@ std::string	Contact::getsecret(void) const
 	return (_secret);
 }
 
+bool	Contact::initialize(std::string& attribute)
+{
+	std::getline(std::cin, attribute);
+	if (attribute.empty() == true)
+	{
+		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+		return (false);
+	}
+	return (true);
+}
 
 bool	Contact::create(void)
 {
 	std::cout << "\n<Enter New Contact Infos>" << std::endl;
 	std::cout << "First Name : ";
-	std::getline(std::cin, _first_name);
-	if (_first_name.empty())
-	{
-		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+	if (initialize(_first_name) == false)
 		return (false);
-	}
 	std::cout << "Last Name : ";
-	std::getline(std::cin, _last_name);
-	if (_last_name.empty())
-	{
-		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+	if (initialize(_last_name) == false)
 		return (false);
-	}
 	std::cout << "Nickname : ";
-	std::getline(std::cin, _nickname);
-	if (_nickname.empty())
-	{
-		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+	if (initialize(_nickname) == false)
 		return (false);
-	}
 	std::cout << "Phone number : ";
-	std::getline(std::cin, _phone_nbr);
-	if (_phone_nbr.empty())
-	{
-		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+	if (initialize(_phone_nbr) == false)
 		return (false);
-	}
 	std::cout << "Darkest secret : ";
-	std::getline(std::cin, _secret);
-	if (_secret.empty())
-	{
-		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+	if (initialize(_secret) == false)
 		return (false);
-	}
 	return (true);
 }
 
