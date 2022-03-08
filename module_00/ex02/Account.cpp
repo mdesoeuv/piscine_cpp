@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:29:36 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/08 11:16:07 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 13:03:25 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ Account::Account(int deposit) : _amount(deposit), _nbDeposits(0), _nbWithdrawals
 
 Account::~Account(void)
 {
-	
+	Account::_displayTimestamp();
+	std::cout << " index:" << _accountIndex << ";" << "amount:" << _amount << ";";
+	std::cout << "closed" << std::endl;
 }
 
 int Account::getNbAccounts(void)
@@ -68,20 +70,40 @@ int Account::getNbWithdrawals(void)
 
 void	Account::makeDeposit(int deposit)
 {
+	int	p_amount = _amount;
+
 	this->_amount += deposit;
 	_totalAmount += deposit;
 	_nbDeposits++;
 	_totalNbDeposits++;
+	Account::_displayTimestamp();
+	std::cout << " index:" << _accountIndex << ";" << "p_amount:" << p_amount << ";" \
+		<< "deposit:" << deposit << ";" << "amount:" << _amount << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal(int withdrawal)
 {
+	int	p_amount = this->_amount;
+	bool accepted = true;
+	
 	if (_amount - withdrawal < 0)
+		accepted = false;
+	else
+	{
+		this->_amount -= withdrawal;
+		_totalAmount -= withdrawal;
+		_nbWithdrawals++;
+		_totalNbWithdrawals++;
+	}
+	Account::_displayTimestamp();
+	std::cout << " index:" << _accountIndex << ";" << "p_amount:" << p_amount << ";" \
+		<< "withdrawal:";
+	if (accepted == false)
+	{
+		std::cout << "refused" << std::endl;
 		return (false);
-	this->_amount -= withdrawal;
-	_totalAmount -= withdrawal;
-	_nbWithdrawals++;
-	_totalNbWithdrawals++;
+	}
+	std::cout << withdrawal << ";" << "amount:" << _amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
 	return (true);
 }
 
@@ -100,7 +122,8 @@ void	Account::displayStatus(void) const
 
 void	Account::displayAccountsInfos(void)
 {
-	
+	_displayTimestamp();
+	std::cout << " accounts:" << _nbAccounts << ";total:" << _totalAmount << ";deposits:" << _totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
 void	Account::_displayTimestamp(void)
