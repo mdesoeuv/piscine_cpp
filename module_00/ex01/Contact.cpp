@@ -1,0 +1,124 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/05 08:48:59 by mdesoeuv          #+#    #+#             */
+/*   Updated: 2022/03/08 16:38:52 by mdesoeuv         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Contact.hpp"
+#include <iostream>
+
+Contact::Contact(void)
+{
+	// std::cout << "Contact constructed" << std::endl;
+}
+
+Contact::~Contact(void)
+{
+	// std::cout << "Contact destructed" << std::endl;
+}
+
+std::string	Contact::getfirstname(void) const
+{
+	return (_first_name);
+}
+
+std::string	Contact::getlastname(void) const
+{
+	return (_last_name);
+}
+
+std::string	Contact::getnickname(void) const
+{
+	return (_nickname);
+}
+
+
+std::string	Contact::getphonenumber(void) const
+{
+	return (_phone_nbr);
+}
+
+
+std::string	Contact::getsecret(void) const
+{
+	return (_secret);
+}
+
+
+bool	Contact::create(void)
+{
+	std::cout << "\n<Enter New Contact Infos>" << std::endl;
+	std::cout << "First Name : ";
+	std::getline(std::cin, _first_name);
+	if (_first_name.empty())
+	{
+		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+		return (false);
+	}
+	std::cout << "Last Name : ";
+	std::getline(std::cin, _last_name);
+	if (_last_name.empty())
+	{
+		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+		return (false);
+	}
+	std::cout << "Nickname : ";
+	std::getline(std::cin, _nickname);
+	if (_nickname.empty())
+	{
+		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+		return (false);
+	}
+	std::cout << "Phone number : ";
+	std::getline(std::cin, _phone_nbr);
+	if (_phone_nbr.empty())
+	{
+		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+		return (false);
+	}
+	std::cout << "Darkest secret : ";
+	std::getline(std::cin, _secret);
+	if (_secret.empty())
+	{
+		std::cout << "Error : empty field, contact has not been registered" << std::endl;
+		return (false);
+	}
+	return (true);
+}
+
+void	Contact::print_contact(void) const
+{
+	std::cout << "\n<Contact Infos>" << std::endl;
+	std::cout << "First name = " << _first_name << std::endl;
+	std::cout << "Last name = " << _last_name << std::endl;
+	std::cout << "Nickname = " << _nickname << std::endl;
+	std::cout << "Phone Number = " << _phone_nbr << std::endl;
+	std::cout << "Darkest secret = " << _secret << std::endl;
+}
+
+void	Contact::print_field(std::string str) const
+{
+	std::string	substr;
+	size_t	i = 0;
+	
+	if (str.size() > 10)
+	{
+		substr = str.substr(0, 9);
+		std::cout << substr << '.';
+	}
+	else
+	{
+		while (i < 10 - str.size())
+		{
+			std::cout << ' ';
+			i++;
+		}
+		std::cout << str;
+	}
+}

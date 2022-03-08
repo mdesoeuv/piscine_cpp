@@ -6,12 +6,14 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:20:25 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/08 15:11:39 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/08 16:34:39 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
+
+# include <iostream>
 
 class Contact
 {
@@ -31,11 +33,11 @@ class Contact
 	
 	private:
 	
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string	phone_nbr;
-	std::string	secret;
+	std::string _first_name;
+	std::string _last_name;
+	std::string _nickname;
+	std::string	_phone_nbr;
+	std::string	_secret;
 };
 
 #endif
