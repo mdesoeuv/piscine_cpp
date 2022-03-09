@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:58:26 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/09 08:53:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 08:59:27 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 
 	while (finish == false)
 	{
-		std::cout << "Input your command : ";
+		std::cout << "\nInput your command : ";
 		std::getline(std::cin, command);
 		if (command.compare("ADD") == 0)
 			my_book.add_contact();
