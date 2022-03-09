@@ -6,12 +6,13 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 08:48:59 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/08 16:44:07 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 09:42:14 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include <iostream>
+#include <iomanip>
 
 Contact::Contact(void)
 {
@@ -85,30 +86,21 @@ bool	Contact::create(void)
 void	Contact::print_contact(void) const
 {
 	std::cout << "\n<Contact Infos>" << std::endl;
-	std::cout << "First name = " << _first_name << std::endl;
-	std::cout << "Last name = " << _last_name << std::endl;
-	std::cout << "Nickname = " << _nickname << std::endl;
-	std::cout << "Phone Number = " << _phone_nbr << std::endl;
-	std::cout << "Darkest secret = " << _secret << std::endl;
+	std::cout << "First name : " << _first_name << std::endl;
+	std::cout << "Last name : " << _last_name << std::endl;
+	std::cout << "Nickname : " << _nickname << std::endl;
+	std::cout << "Phone Number : " << _phone_nbr << std::endl;
+	std::cout << "Darkest secret : " << _secret << std::endl;
 }
 
 void	Contact::print_field(std::string str) const
 {
-	std::string	substr;
-	size_t	i = 0;
-	
 	if (str.size() > 10)
 	{
-		substr = str.substr(0, 9);
-		std::cout << substr << '.';
+		std::cout << std::right << std::setw(10) << str.substr(0, 9) + '.';
 	}
 	else
 	{
-		while (i < 10 - str.size())
-		{
-			std::cout << ' ';
-			i++;
-		}
-		std::cout << str;
+		std::cout << std::right << std::setw(10) << str;
 	}
 }

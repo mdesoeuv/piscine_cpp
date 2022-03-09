@@ -6,11 +6,12 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:13:24 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/09 09:12:05 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 09:40:54 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
@@ -42,7 +43,6 @@ void	PhoneBook::add_contact(void)
 void	PhoneBook::list_contacts(void) const
 {
 	int	i = 0;
-	int	j;
 	int	max;
 
 	if (contact_nbr > 8)
@@ -51,20 +51,14 @@ void	PhoneBook::list_contacts(void) const
 		max = contact_nbr;
 	while (i < max)
 	{
-		j = 0;
-		while (j < 9)
-		{
-			std::cout << ' ';
-			j++;
-		}
-		std::cout << i;
+		std::cout << std::right << std::setw(10) << i;
 		std::cout << '|';
 		tab[i].print_field(tab[i].getfirstname());
 		std::cout << '|';
 		tab[i].print_field(tab[i].getlastname());
 		std::cout << '|';
 		tab[i].print_field(tab[i].getnickname());
-		std::cout << std::endl;
+		std::cout << std::endl;       
 		i++;
 	}
 }
@@ -80,7 +74,7 @@ void	PhoneBook::search_contact(void) const
 	}
 	this->list_contacts();
 	std::cout << "Input contact index number : ";
-	while (!(std::cin >> index) || std::cin. "\n")
+	while (!(std::cin >> index))
 	{
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -88,7 +82,7 @@ void	PhoneBook::search_contact(void) const
 	}
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	if (index < 0 || index > this->contact_nbr - 1)
-		std::cout << "This contact does not exist" << std::endl;
+		std::cout << "That contact does not exist" << std::endl;
 	else
 		this->tab[index].print_contact();
 }
