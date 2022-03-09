@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:58:26 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/07 12:28:21 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 08:53:25 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(void)
 	std::string	command;
 	int	finish = false;
 
-	// std::cout << std::endl;
 	while (finish == false)
 	{
 		std::cout << "Input your command : ";
