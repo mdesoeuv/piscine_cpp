@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 11:30:07 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/09 15:33:20 by mdesoeuv         ###   ########lyon.fr   */
+/*   Created: 2022/03/09 14:50:59 by mdesoeuv          #+#    #+#             */
+/*   Updated: 2022/03/09 15:50:22 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-
-class Zombie
+Zombie*	zombieHorde(int N, std::string name)
 {
-	public :
-
-	Zombie(void);
-	Zombie(std::string name);
-	~Zombie(void);
-	void	announce(void);
-	void	setname(std::string name);
-
-	private :
-
-	std::string _name;
-
-};
-
-#endif
+	Zombie* horde;
+	
+	if (N <= 0)
+		return (NULL);
+	try
+	{
+		horde = new Zombie[N];
+	}
+	catch(std::bad_alloc&)
+	{
+		std::cerr << "error : allocation failed" << std::endl;
+		exit (EXIT_FAILURE);
+	}
+	for (int i = 0; i < N; i++)
+	{
+		horde[i].setname(name);
+	}
+	return (horde);
+}

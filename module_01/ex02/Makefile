@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 14:30:05 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/09 15:06:23 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/09 15:46:05 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,7 @@ CFLAGS := -Wall -Werror -Wextra -g3 -std=c++98
 
 DEBUG := -fsanitize=address
 
-SRCS := Zombie.cpp \
-		zombieHorde.cpp \
-		main.cpp
+SRCS := main.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 
@@ -28,7 +26,7 @@ OBJS_DIR := objs/
 
 OBJS_FILES := $(addprefix $(OBJS_DIR), $(OBJS))
 
-$(OBJS_DIR)%.o :	%.cpp Zombie.hpp
+$(OBJS_DIR)%.o :	%.cpp
 					mkdir -p $(OBJS_DIR)
 					$(CC) $(CFLAGS) $(DEBUG) -c $< -o $@
 
