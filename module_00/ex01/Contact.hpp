@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:20:25 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/08 16:44:19 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 10:32:04 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Contact
 	bool create(void);
 	void print_contact(void) const;
 	void print_field(std::string str) const;
-	bool initialize(std::string& attribute);
 	std::string	getfirstname(void) const;
 	std::string	getlastname(void) const;
 	std::string	getnickname(void) const;
@@ -34,6 +33,7 @@ class Contact
 	
 	private:
 	
+	bool initialize(std::string& attribute);
 	std::string _first_name;
 	std::string _last_name;
 	std::string _nickname;
