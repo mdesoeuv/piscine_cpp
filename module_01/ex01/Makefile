@@ -5,22 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/04 11:20:30 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/09 14:41:54 by mdesoeuv         ###   ########lyon.fr    #
+#    Created: 2022/03/09 14:30:05 by mdesoeuv          #+#    #+#              #
+#    Updated: 2022/03/09 14:49:16 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := BraiiiiiiinnnzzzZ
+NAME := MoreBrainz
 
-CC := c++ 
+CC := g++
 
-CFLAGS := -Wall -Wextra -Werror -std=c++98
+CFLAGS := -Wall -Werror -Wextra -g3 -std=c++98
 
-DEBUG := -fsanitize=address -g3
+DEBUG := -fsanitize=address
 
-SRCS :=	Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp \
+SRCS := Zombie.cpp \
 		main.cpp
 
 OBJS := $(SRCS:.cpp=.o)
@@ -29,22 +27,20 @@ OBJS_DIR := objs/
 
 OBJS_FILES := $(addprefix $(OBJS_DIR), $(OBJS))
 
-all : $(NAME)
+$(OBJS_DIR)%.o :	%.c Zombie.hpp
+					mkdir -p $(OBJS_DIR)
+					$(CC) $(CFLAGS) $(DEBUG) -c $< -o $@
 
-$(NAME) :	$(OBJS_FILES)
-			$(CC) $(CFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
+all :	$(NAME)
 
-objs/%.o :	%.cpp Zombie.hpp
-			mkdir -p $(OBJS_DIR)
-			$(CC) $(CFLAGS) $(DEBUG) -c $< -o $@
-
+NAME :	$(OBJS_FILES)
+		$(CC) $(CFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
+		
 clean :
 		rm -rf $(OBJS_DIR)
-		
-fclean :	clean 
+
+fclean :	clean
 			rm -f $(NAME)
-		
+
 re :	fclean
 		$(MAKE) all
-	
-.PHONY : all clean fclean re

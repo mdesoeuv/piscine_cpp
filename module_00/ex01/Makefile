@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 11:20:30 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/07 16:07:42 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/09 14:42:30 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ all : $(NAME)
 $(NAME) :	$(OBJS_FILES)
 			$(CC) $(CFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
 
-objs/%.o :	%.cpp
+objs/%.o :	%.cpp Contact.hpp PhoneBook.hpp
 			mkdir -p $(OBJS_DIR)
 			$(CC) $(CFLAGS) $(DEBUG) -c $< -o $@
 
