@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:55:38 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/10 14:04:12 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/10 14:21:53 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,11 @@ Karen::~Karen(void)
 	std::cout << "Karen is tired and goes to sleep" << std::endl;
 }
 
-void	Karen::complain(std::string level)
-{
-	
-}
-
 void	Karen::debug(void)
 {
 	std::cerr << "I love having extra bacon for my \
-		7XL-double-cheese-triple-pickle-special-ketchup burger. I really do !" << std::endl;
+		7XL-double-cheese-triple-pickle-special-ketchup burger. \
+		I really do !" << std::endl;
 }
 
 void	Karen::info(void)
@@ -51,4 +47,17 @@ void	Karen::warning(void)
 void	Karen::error(void)
 {
 	std::cerr << "This is unacceptable ! I want to speak to the manager now." << std::endl;
+}
+
+int		Karen::parse_level(std::string level)
+{
+	if (level.compare("DEBUG") == 0)
+		return (DEBUG);
+	if (level.compare("INFO") == 0)
+		return ()
+}
+
+void	Karen::complain(std::string level)
+{
+	
 }
