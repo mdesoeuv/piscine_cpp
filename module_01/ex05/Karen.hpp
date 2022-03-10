@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:51:52 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/10 18:42:26 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/10 18:54:39 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ class Karen
 		void	info(void);
 		void	warning(void);
 		void	error(void);
-		int		parse_level(std::string level);
 		
 };
 

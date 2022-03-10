@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:55:38 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/10 18:52:21 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/10 18:53:53 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	Karen::complain(std::string level)
 	while (i < MAX_PROBLEM)
 	{
 		if (level == problem_tab[i].level)
-			*problem_tab[i].function_ptr();
+			(problem_tab)[i].function_ptr();
 		i++;
 	}
 }
