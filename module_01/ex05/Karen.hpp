@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:51:52 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/10 14:20:20 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/10 18:42:26 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,20 @@
 # define INFO 1
 # define WARNING 2
 # define ERROR 3
+# define MAX_PROBLEM 4
+
+typedef struct problem
+{
+	std::string	level;
+	void	(Karen::*function_ptr)(void);
+}	t_problem;
 
 class Karen
 {
 	public :
 	
 		void	complain(std::string level);
+		t_problem	problem_tab[MAX_PROBLEM];
 
 	private :
 	

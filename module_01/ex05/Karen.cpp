@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:55:38 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/10 14:21:53 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/10 18:52:21 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 Karen::Karen(void)
 {
+	problem_tab[DEBUG].level = "DEBUG";
+	problem_tab[DEBUG].function_ptr = &Karen::debug;
+	problem_tab[INFO].level = "INFO";
+	problem_tab[INFO].function_ptr = &Karen::info;
+	problem_tab[WARNING].level = "WARNING";
+	problem_tab[WARNING].function_ptr = &Karen::warning;
+	problem_tab[ERROR].level = "ERROR";
+	problem_tab[ERROR].function_ptr = &Karen::error;
 	std::cout << "Karen is constructed and ready to complain" << std::endl;	
 }
 
@@ -49,15 +57,14 @@ void	Karen::error(void)
 	std::cerr << "This is unacceptable ! I want to speak to the manager now." << std::endl;
 }
 
-int		Karen::parse_level(std::string level)
-{
-	if (level.compare("DEBUG") == 0)
-		return (DEBUG);
-	if (level.compare("INFO") == 0)
-		return ()
-}
-
 void	Karen::complain(std::string level)
 {
-	
+	int	i = 0;
+
+	while (i < MAX_PROBLEM)
+	{
+		if (level == problem_tab[i].level)
+			*problem_tab[i].function_ptr();
+		i++;
+	}
 }
