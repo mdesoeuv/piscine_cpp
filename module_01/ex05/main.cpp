@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 14:50:59 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/11 10:21:08 by mdesoeuv         ###   ########lyon.fr   */
+/*   Created: 2022/03/11 10:22:16 by mdesoeuv          #+#    #+#             */
+/*   Updated: 2022/03/11 10:24:52 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Karen.hpp"
+#include <iostream>
 
-Zombie*	zombieHorde(int N, std::string name)
+int	main(void)
 {
-	Zombie* horde;
-	
-	if (N <= 0)
-		return (NULL);
-	horde = new Zombie[N];
-	for (int i = 0; i < N; i++)
-	{
-		horde[i].setname(name);
-	}
-	return (horde);
+	Karen	KarenHerself;
+
+	KarenHerself.complain("DEBUG");
+	KarenHerself.complain("INFO");
+	KarenHerself.complain("WARNING");
+	KarenHerself.complain("ERROR");
+	KarenHerself.complain("Random things");
+
+	return (0);
 }
