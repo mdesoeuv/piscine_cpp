@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:55:38 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/11 11:53:36 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 12:31:01 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,39 @@ Karen::~Karen(void)
 
 void	Karen::debug(void)
 {
+	std::cout << "[ DEBUG LEVEL ]" << std::endl;
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do !" << std::endl;
 }
 
 void	Karen::info(void)
 {
+	std::cout << "[ INFO LEVEL ]" << std::endl;
 	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger ! If you did, I wouldn’t be asking for more !" << std::endl;
 }
 
 void	Karen::warning(void)
 {
+	std::cout << "[ WARNING LEVEL ]" << std::endl;
 	std::cerr << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;
 }
 
 void	Karen::error(void)
 {
+	std::cout << "[ ERROR LEVEL ]" << std::endl;
 	std::cerr << "This is unacceptable ! I want to speak to the manager now." << std::endl;
+}
+
+int	Karen::level_compute(std::string level)
+{
+	int	i = 0;
+
+	while (i < MAX_PROBLEM)
+	{
+		if (level == problem_tab[i].level)
+			return (i);
+		i++;
+	}
+	return (MAX_PROBLEM + 1);
 }
 
 void	Karen::setLevel(std::string level)
@@ -55,9 +72,14 @@ void	Karen::setLevel(std::string level)
 	_selected_level = level_compute(level);
 }
 
-void	Karen::filter(std::string level, int selected_level)
+int		Karen::getLevel(void)
 {
-	if (level_compute(level) >= selected_level)
+	return (_selected_level);
+}
+
+void	Karen::filter(std::string level)
+{
+	if (level_compute(level) >= _selected_level)
 		complain(level);
 }
 
@@ -74,5 +96,4 @@ void	Karen::complain(std::string level)
 		}
 		i++;
 	}
-	std::cout << "Life is tough you know..." << std::endl;
 }

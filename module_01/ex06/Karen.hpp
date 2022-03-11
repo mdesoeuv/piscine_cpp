@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:51:52 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/11 11:52:37 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 12:29:44 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ class Karen
 	public :
 		Karen(void);
 		~Karen(void);
-		void	filter(std::string level, int selected_level);
+		void	filter(std::string level);
 		void	complain(std::string level);
 		problem	problem_tab[MAX_PROBLEM];
 		void	setLevel(std::string level);
+		int		getLevel(void);
 
 	private :
 	
@@ -45,7 +46,7 @@ class Karen
 		void	info(void);
 		void	warning(void);
 		void	error(void);
-		int		Karen::level_compute(std::string level);
+		int		level_compute(std::string level);
 		int		_selected_level;
 		
 };
