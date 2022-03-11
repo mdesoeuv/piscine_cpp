@@ -6,13 +6,13 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:55:38 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/11 10:28:22 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 11:53:36 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
-Karen::Karen(void)
+Karen::Karen(void) : _selected_level(0)
 {
 	problem_tab[DEBUG].level = "DEBUG";
 	problem_tab[DEBUG].function_ptr = &Karen::debug;
@@ -48,6 +48,17 @@ void	Karen::warning(void)
 void	Karen::error(void)
 {
 	std::cerr << "This is unacceptable ! I want to speak to the manager now." << std::endl;
+}
+
+void	Karen::setLevel(std::string level)
+{
+	_selected_level = level_compute(level);
+}
+
+void	Karen::filter(std::string level, int selected_level)
+{
+	if (level_compute(level) >= selected_level)
+		complain(level);
 }
 
 void	Karen::complain(std::string level)
