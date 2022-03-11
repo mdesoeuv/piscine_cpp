@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:58:26 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/11 16:54:26 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 17:50:08 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
 	std::string	command;
 	int	finish = false;
 
-	/* throws an exception when cin flag eofbit is set */
+	/* throws an exception failure when cin flag eofbit is set */
 	
 	std::cin.exceptions(std::ios_base::eofbit);
 
