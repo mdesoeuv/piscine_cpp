@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:20:40 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/08 16:58:57 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 12:45:57 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
-	for (size_t i = 0; i < argc; ++i)
+	for (int i = 1; i < argc; ++i)
 		std::cout << capitalized(argv[i]);
 	
 	std::cout << std::endl;

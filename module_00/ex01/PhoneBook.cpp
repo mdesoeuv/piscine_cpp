@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:13:24 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/09 10:21:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 12:47:30 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 PhoneBook::PhoneBook(void)
 {
 	contact_nbr = 0;
-	// std::cout << "PhoneBook constructed" << std::endl;
+	std::cout << "PhoneBook constructed" << std::endl;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	// std::cout << "PhoneBook destructed" << std::endl;
+	std::cout << "PhoneBook destructed" << std::endl;
 }
 
 void	PhoneBook::add_contact(void)

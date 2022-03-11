@@ -6,11 +6,11 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 14:30:05 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/09 15:46:05 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/11 12:43:30 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := MoreBrainz
+NAME := HelloBrain
 
 CC := g++
 
@@ -26,7 +26,7 @@ OBJS_DIR := objs/
 
 OBJS_FILES := $(addprefix $(OBJS_DIR), $(OBJS))
 
-$(OBJS_DIR)%.o :	%.cpp
+$(OBJS_DIR)%.o :	%.cpp Makefile
 					mkdir -p $(OBJS_DIR)
 					$(CC) $(CFLAGS) $(DEBUG) -c $< -o $@
 

@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 11:20:30 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/09 14:41:54 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/11 12:43:44 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ all : $(NAME)
 $(NAME) :	$(OBJS_FILES)
 			$(CC) $(CFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
 
-objs/%.o :	%.cpp Zombie.hpp
+objs/%.o :	%.cpp Zombie.hpp Makefile
 			mkdir -p $(OBJS_DIR)
 			$(CC) $(CFLAGS) $(DEBUG) -c $< -o $@
 

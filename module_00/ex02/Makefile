@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 11:20:30 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/09 14:42:13 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/11 12:48:57 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC := c++
 
 CFLAGS := -Wall -Wextra -Werror -std=c++98
 
-DEBUG := -fsanitize=address -g3
+#DEBUG := -fsanitize=address -g3
 
 SRCS :=	Account.cpp \
 		tests.cpp
@@ -32,7 +32,7 @@ all : $(NAME)
 $(NAME) :	$(OBJS_FILES)
 			$(CC) $(CFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
 
-objs/%.o :	%.cpp Account.hpp
+objs/%.o :	%.cpp Account.hpp Makefile
 			mkdir -p $(OBJS_DIR)
 			$(CC) $(CFLAGS) $(DEBUG) -c $< -o $@
 

@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 14:30:05 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/09 17:48:23 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/11 12:43:22 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJS_DIR := objs/
 
 OBJS_FILES := $(addprefix $(OBJS_DIR), $(OBJS))
 
-$(OBJS_DIR)%.o :	%.cpp Weapon.hpp HumanA.hpp HumanB.hpp
+$(OBJS_DIR)%.o :	%.cpp Weapon.hpp HumanA.hpp HumanB.hpp Makefile
 					mkdir -p $(OBJS_DIR)
 					$(CC) $(CFLAGS) $(DEBUG) -c $< -o $@
 
