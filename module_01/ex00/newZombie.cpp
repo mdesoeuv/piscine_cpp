@@ -6,11 +6,12 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:01:04 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/09 15:45:46 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 13:04:21 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <iostream>
 
 Zombie* newZombie(std::string name)
 {
