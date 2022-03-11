@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:52:48 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/09 10:31:41 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 14:24:43 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class PhoneBook
 	private:
 
 	Contact tab[8];
-	int	contact_nbr;
+	size_t contact_nbr;
 };
 
 

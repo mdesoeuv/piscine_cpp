@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:13:24 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/11 12:47:30 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 14:38:52 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ void	PhoneBook::list_contacts(void) const
 
 void	PhoneBook::search_contact(void) const
 {
-	int	index;
-	char	choice;
+	size_t	choice;
 	
 	if (this->contact_nbr == 0)
 	{
@@ -75,16 +74,15 @@ void	PhoneBook::search_contact(void) const
 	}
 	this->list_contacts();
 	std::cout << "Input contact index number : ";
-	while (!(std::cin >> std::setw(1) >> choice) || (choice < '0' || choice > '9') || std::cin.peek() != '\n')
+	while (std::cin >> choice && std::cin.peek() == '\n')
 	{
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Invalid input, enter a valid number : ";
 	}
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	index = choice - '0';
-	if (index < 0 || index > this->contact_nbr - 1)
-		std::cout << "That contact does not exist" << std::endl;
+	std::cin.get();
+	if (choice < this->contact_nbr)
+		this->tab[choice].print_contact();
 	else
-		this->tab[index].print_contact();
+		std::cout << "That contact does not exist" << std::endl;
 }

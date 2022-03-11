@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 08:48:59 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/09 10:23:43 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 14:13:22 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,35 @@
 
 Contact::Contact(void)
 {
-	// std::cout << "Contact constructed" << std::endl;
 }
 
 Contact::~Contact(void)
 {
-	// std::cout << "Contact destructed" << std::endl;
 }
 
-std::string	Contact::getfirstname(void) const
+const std::string&	Contact::getfirstname(void) const
 {
 	return (_first_name);
 }
 
-std::string	Contact::getlastname(void) const
+const std::string&	Contact::getlastname(void) const
 {
 	return (_last_name);
 }
 
-std::string	Contact::getnickname(void) const
+const std::string&	Contact::getnickname(void) const
 {
 	return (_nickname);
 }
 
 
-std::string	Contact::getphonenumber(void) const
+const std::string&	Contact::getphonenumber(void) const
 {
 	return (_phone_nbr);
 }
 
 
-std::string	Contact::getsecret(void) const
+const std::string&	Contact::getsecret(void) const
 {
 	return (_secret);
 }

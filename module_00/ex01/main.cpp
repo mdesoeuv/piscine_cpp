@@ -6,12 +6,13 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 11:58:26 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/09 08:59:27 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/11 16:54:26 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstring>
+
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
@@ -21,16 +22,27 @@ int	main(void)
 	std::string	command;
 	int	finish = false;
 
-	while (finish == false)
+	/* throws an exception when cin flag eofbit is set */
+	
+	std::cin.exceptions(std::ios_base::eofbit);
+
+	try
 	{
-		std::cout << "\nInput your command : ";
-		std::getline(std::cin, command);
-		if (command.compare("ADD") == 0)
-			my_book.add_contact();
-		else if (command.compare("SEARCH") == 0)
-			my_book.search_contact();
-		else if (command.compare("EXIT") == 0)
-			finish = true;
+		while (finish == false)
+		{
+			std::cout << "\nInput your command : ";
+			std::getline(std::cin, command);
+			if (command.compare("ADD") == 0)
+				my_book.add_contact();
+			else if (command.compare("SEARCH") == 0)
+				my_book.search_contact();
+			else if (command.compare("EXIT") == 0)
+				finish = true;
+		}
+	}
+	catch (const std::istream::failure& e)
+	{
+		std::cout << "Bye bye" << std::endl;
 	}
 	return (0);
 }
