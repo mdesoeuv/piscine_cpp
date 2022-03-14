@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:13:24 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/11 14:38:52 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/14 12:07:40 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,13 @@ void	PhoneBook::search_contact(void) const
 	}
 	this->list_contacts();
 	std::cout << "Input contact index number : ";
-	while (std::cin >> choice && std::cin.peek() == '\n')
+	while (!(std::cin >> std::setw(1) >> choice) || choice > '9' || std::cin.peek() != '\n')
 	{
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Invalid input, enter a valid number : ";
 	}
-	std::cin.get();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	if (choice < this->contact_nbr)
 		this->tab[choice].print_contact();
 	else
