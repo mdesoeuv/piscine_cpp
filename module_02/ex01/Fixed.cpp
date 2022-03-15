@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:00:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/14 16:49:59 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/15 10:18:02 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ Fixed::Fixed(void) : _raw_value(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed& fixed)
+Fixed::Fixed(const Fixed& fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = fixed;
+	this->_raw_value = fixed._raw_value;
 }
 
 Fixed::Fixed(const int n)
 {
-	_raw_value = (int)roundf(n / (pow(2, _fraction_bit_number)));
+	_raw_value = (int)roundf(n * power());
 }
 
 Fixed::Fixed(const float n)
 {
-	_raw_value = (int)(n * (pow(2, _fraction_bit_number)));
+	_raw_value = (int)roundf(n * power());
 }
 
 Fixed::~Fixed(void)
@@ -76,6 +76,8 @@ int		Fixed::toInt(void) const
 {
 	return ((int)roundf(_raw_value / (float)power()));
 }
+
+/* used to calculate 2 power fraction_bit_number */
 
 int		Fixed::power(void) const
 {

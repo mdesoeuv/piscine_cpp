@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:19:49 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/14 16:40:21 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/15 10:12:37 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 
 int main( void )
 {
-	Fixed a(-2.44f);
-	Fixed b(a);
-	Fixed c(-2);
-	c = b;
-	std::cout << a.toFloat() << std::endl;
-	std::cout << b.toInt() << std::endl;
-	std::cout << c.toFloat() << std::endl;
-	std::cout << a << std::endl;
+	Fixed a;
+	Fixed const b(10);
+	Fixed const c(42.42f);
+	Fixed const d(b);
+	a = Fixed(1234.4321f);
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return (0);
 }

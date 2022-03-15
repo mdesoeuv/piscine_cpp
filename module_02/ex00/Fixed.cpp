@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:00:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/11 17:30:57 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/15 10:18:42 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ Fixed::Fixed(void) : _raw_value(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed& fixed)
+Fixed::Fixed(const Fixed& fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = fixed;
+	this->_raw_value = fixed._raw_value;
 }
 
 Fixed::~Fixed(void)
