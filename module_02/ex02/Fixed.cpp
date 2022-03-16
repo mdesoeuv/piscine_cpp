@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:00:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/15 11:47:01 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 10:21:55 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ Fixed::Fixed(const Fixed& fixed)
 
 Fixed::Fixed(const int n)
 {
-	_raw_value = (int)roundf(n * power());
+	_raw_value = (int)(n * (1 << _fraction_bit_number));
 }
 
 Fixed::Fixed(const float n)
 {
-	_raw_value = (int)roundf(n * power());
+	_raw_value = (int)(n * (1 << _fraction_bit_number));
 }
 
 Fixed::~Fixed(void)
@@ -124,6 +124,27 @@ Fixed	Fixed::operator/(const Fixed &rvalue) const
 	return (temp);
 }
 
+/* prefix incrementation */
+
+Fixed	Fixed::operator++(void)
+{
+	this->_raw_value += 1;
+	return (*this);
+}
+
+/* 
+** postfix incrementation copy the source 
+** then increments the source and returns the copy
+*/
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	temp(*this);
+
+	this->_raw_value += 1;
+	return (temp);
+}
+
 std::ostream	&operator<<(std::ostream &out, const Fixed &value)
 {
 	out << value.toFloat();
@@ -145,25 +166,10 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (_raw_value / (float)power());
+	return (_raw_value / float(1 << _fraction_bit_number));
 }
 
 int		Fixed::toInt(void) const
 {
-	return ((int)roundf(_raw_value / (float)power()));
-}
-
-/* used to calculate 2 power fraction_bit_number */
-
-int		Fixed::power(void) const
-{
-	int	i = 1;
-	int	res = 1;
-
-	while (i <= _fraction_bit_number)
-	{
-		res *= 2;
-		i++;
-	}
-	return (res);
+	return ((int)roundf(_raw_value / float(1 << _fraction_bit_number)));
 }
