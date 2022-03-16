@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:19:49 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 10:59:56 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 11:02:54 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,19 @@ int main( void )
 	std::cout << "c (" << c << ") - d (" << d << ") = " << c - d << std::endl;
 	std::cout << "c (" << c << ") * d (" << d << ") = " << c * d << std::endl;
 	std::cout << "c (" << c << ") / d (" << d << ") = " << c / d << std::endl;
+	
+	std::cout << "\nc : " << c << std::endl;
+	std::cout << "d : " << d << std::endl;
 	if (c < d)
 		std::cout << "c < d" << std::endl;
+	if (c <= d)
+		std::cout << "c <= d" << std::endl;
 	if (c > d)
 		std::cout << "c > d" << std::endl;
+	if (c >= d)
+		std::cout << "c >= d" << std::endl;
+	if (c >= c)
+		std::cout << "c >= c" << std::endl;
 	if (c == d)
 		std::cout << "c == d" << std::endl;
 	if (c != d)
