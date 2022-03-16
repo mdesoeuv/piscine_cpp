@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:00:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 10:28:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 10:54:22 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ const int	Fixed::_fraction_bit_number = 8;
 
 Fixed::Fixed(void) : _raw_value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& fixed)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	this->_raw_value = fixed._raw_value;
 }
 
@@ -38,12 +38,12 @@ Fixed::Fixed(const float n)
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 Fixed	&Fixed::operator=(const Fixed &source)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	this->_raw_value = source.getRawBits();
 	return (*this);
 }
@@ -148,19 +148,17 @@ Fixed	Fixed::operator++(int)
 std::ostream	&operator<<(std::ostream &out, const Fixed &value)
 {
 	out << value.toFloat();
-	out	<< " overloaded";
+	// out	<< " overloaded";
 	return (out);
 }
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (_raw_value);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	_raw_value = raw;
 }
 
@@ -172,4 +170,36 @@ float	Fixed::toFloat(void) const
 int		Fixed::toInt(void) const
 {
 	return ((int)roundf(_raw_value / float(1 << _fraction_bit_number)));
+}
+
+Fixed	&Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a._raw_value < b._raw_value)
+		return (a);
+	else
+		return (b);
+}
+
+Fixed	&Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a._raw_value > b._raw_value)
+		return (a);
+	else
+		return (b);
+}
+
+Fixed	Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a.getRawBits() < b.getRawBits())
+		return (a);
+	else
+		return (b);
+}
+
+Fixed	Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a.getRawBits() > b.getRawBits())
+		return (Fixed(a));
+	else
+		return (Fixed(b));
 }

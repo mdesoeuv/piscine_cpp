@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:09:41 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 10:20:36 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 10:44:33 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ class Fixed
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;
 		int		toInt(void) const;
+		static	Fixed	&min(Fixed& a, Fixed& b);
+		static	Fixed	&max(Fixed& a, Fixed& b);
+		static	Fixed	min(const Fixed& a, const Fixed& b);
+		static	Fixed	max(const Fixed& a, const Fixed& b);
 	
 	private :	
 
