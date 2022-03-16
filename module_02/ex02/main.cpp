@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:19:49 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 10:18:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 10:26:13 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main( void )
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
+	std::cout << "Fixed(2) = " << Fixed(2) << std::endl;
 	if (a < b)
 		std::cout << "a < b" << std::endl;
 	if (a > b)

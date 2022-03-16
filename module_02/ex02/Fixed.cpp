@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:00:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 10:21:55 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 10:28:25 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Fixed::Fixed(const int n)
 
 Fixed::Fixed(const float n)
 {
-	_raw_value = (int)(n * (1 << _fraction_bit_number));
+	_raw_value = (int)roundf(n * (1 << _fraction_bit_number));
 }
 
 Fixed::~Fixed(void)
