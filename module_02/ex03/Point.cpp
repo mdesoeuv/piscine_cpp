@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 11:07:35 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 12:00:18 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 14:53:27 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,13 @@ Point::~Point(void)
 {
 }
 
+/* is it a good practice to trick-cast to get canonical class */
+
 Point	&Point::operator=(const Point &source)
 {
-	(void)source;
+	(Fixed)this->x = source.getX();
+	(Fixed)this->y = source.getY();
+
 	return (*this);
 }
 
