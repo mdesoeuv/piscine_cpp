@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:00:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/15 10:18:02 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 10:30:19 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ Fixed::Fixed(const Fixed& fixed)
 
 Fixed::Fixed(const int n)
 {
-	_raw_value = (int)roundf(n * power());
+	_raw_value = (int)(n * (1 << _fraction_bit_number));
 }
 
 Fixed::Fixed(const float n)
 {
-	_raw_value = (int)roundf(n * power());
+	_raw_value = (int)roundf(n * (1 << _fraction_bit_number));
 }
 
 Fixed::~Fixed(void)
@@ -69,25 +69,10 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (_raw_value / (float)power());
+	return (_raw_value / float(1 << _fraction_bit_number));
 }
 
 int		Fixed::toInt(void) const
 {
-	return ((int)roundf(_raw_value / (float)power()));
-}
-
-/* used to calculate 2 power fraction_bit_number */
-
-int		Fixed::power(void) const
-{
-	int	i = 1;
-	int	res = 1;
-
-	while (i <= _fraction_bit_number)
-	{
-		res *= 2;
-		i++;
-	}
-	return (res);
+	return ((int)roundf(_raw_value / float(1 << _fraction_bit_number)));
 }
