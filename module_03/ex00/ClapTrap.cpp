@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:04:22 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 15:47:45 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 16:02:18 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 	if (_EnergyPoints < 1)
 	{
-		std::cout << "not enough energy points to perform this action" << std::endl;
+		std::cout << _Name << " has not enough energy points to perform this action" << std::endl;
 		return ;
 	}
-	std::cout << _Name << " is being repaired" << std::endl;
 	_HitPoints += amount;
+	std::cout << _Name << " is being repaired and regains " << amount << " HP for a total of " << _HitPoints << " HP !" << std::endl;
 	_EnergyPoints -= 1;
 }
 
