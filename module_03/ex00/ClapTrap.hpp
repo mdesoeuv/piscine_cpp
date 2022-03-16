@@ -6,11 +6,14 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:04:33 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 15:25:31 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 15:52:53 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifned CLAPTRAP_HPP
+# define CLAPTRAP_HPP
+
+# include <iostream>
 
 class ClapTrap
 {
@@ -35,3 +38,5 @@ class ClapTrap
 		void	beRepaired(unsigned int amount);
 		
 };
+
+#endif

@@ -6,11 +6,14 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 11:05:19 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 11:57:10 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 15:52:13 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifnef POINT_HPP
+# define POINT_HPP
+
+# include "Fixed.hpp"
 
 class Point
 {
@@ -31,3 +34,4 @@ class Point
 
 };
 
+#endif
