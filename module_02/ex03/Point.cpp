@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 11:07:35 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 14:53:27 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/16 14:55:28 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ Point::Point(const Point& source) : x(source.x), y(source.y)
 
 Point::~Point(void)
 {
+	x.~Fixed();
+	y.~Fixed();
 }
 
 /* is it a good practice to trick-cast to get canonical class */
