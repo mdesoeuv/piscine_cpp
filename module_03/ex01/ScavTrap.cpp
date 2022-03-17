@@ -6,24 +6,26 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:10:12 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/17 10:59:34 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/17 15:20:10 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+const unsigned ScavTrap::ATTACK_DAMAGE(20);
+
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	_HitPoints = 100;
 	_EnergyPoints = 50;
-	_AttackDamage = 20;
+	_AttackDamage = ATTACK_DAMAGE;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	_HitPoints = 100;
 	_EnergyPoints = 50;
-	_AttackDamage = 20;
+	_AttackDamage = ATTACK_DAMAGE;
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
@@ -37,7 +39,6 @@ ScavTrap::ScavTrap(const ScavTrap& source) : ClapTrap(source)
 
 ScavTrap::~ScavTrap(void)
 {
-	// ClapTrap::~ClapTrap();
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
 

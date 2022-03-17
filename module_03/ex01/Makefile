@@ -6,13 +6,13 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 14:30:05 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/17 11:07:20 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/17 14:16:18 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := ScavTrap
 
-CC := g++
+CC := c++
 
 CFLAGS := -Wall -Werror -Wextra -g3 -std=c++98
 

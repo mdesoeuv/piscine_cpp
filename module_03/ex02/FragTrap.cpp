@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:11:19 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/17 13:14:43 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/17 14:22:34 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,7 @@ FragTrap::~FragTrap(void)
 
 FragTrap	&FragTrap::operator=(const FragTrap& source)
 {
-	this->_AttackDamage = source._AttackDamage;
-	this->_EnergyPoints = source._EnergyPoints;
-	this->_HitPoints = source._HitPoints;
-	this->_Name = source._Name;
+	ClapTrap::operator=(source);
 	
 	return (*this);
 }

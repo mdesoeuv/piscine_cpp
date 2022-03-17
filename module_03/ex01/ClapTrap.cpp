@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:04:22 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/17 11:01:21 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/17 18:04:32 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ ClapTrap::ClapTrap(const ClapTrap &source) :	_Name(source._Name),
 												_AttackDamage(source._AttackDamage)
 {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energy, unsigned int attackDamage) :	_Name(name),
+																												_HitPoints(hitPoints),
+																												_EnergyPoints(energy),
+																												_AttackDamage(attackDamage)
+{
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)

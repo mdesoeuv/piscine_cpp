@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:22:10 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/17 13:24:20 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/17 18:09:32 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,16 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private :
 
+		std::string		_Name;
+		ClapTrap::_Name;
+		FragTrap::_HitPoints;
+		ScavTrap::_EnergyPoints;
+		FragTrap::_AttackDamage;
+
 
 	public :
 	
+		using ScavTrap::attack;	
 	
 };
 

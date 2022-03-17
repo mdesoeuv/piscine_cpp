@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:10:37 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/17 10:58:15 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/17 15:20:16 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 class ScavTrap : public ClapTrap
 {
 	private:
-		/* data */
+		
+		static const unsigned ATTACK_DAMAGE;
 	public:
 		ScavTrap(void);
 		ScavTrap(std::string name);
