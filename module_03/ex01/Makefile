@@ -6,11 +6,11 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 14:30:05 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/16 15:04:00 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/17 11:03:44 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := AndAction
+NAME := Taylorism
 
 CC := g++
 
@@ -19,6 +19,7 @@ CFLAGS := -Wall -Werror -Wextra -g3 -std=c++98
 DEBUG := -fsanitize=address
 
 SRCS := ClapTrap.cpp \
+		ScavTrap.cpp \
 		main.cpp
 		
 
@@ -28,7 +29,7 @@ OBJS_DIR := objs/
 
 OBJS_FILES := $(addprefix $(OBJS_DIR), $(OBJS))
 
-$(OBJS_DIR)%.o :	%.cpp ClapTrap.hpp Makefile
+$(OBJS_DIR)%.o :	%.cpp ClapTrap.hpp ScavTrap.hpp Makefile
 					mkdir -p $(OBJS_DIR)
 					$(CC) $(CFLAGS) $(DEBUG) -c $< -o $@
 
