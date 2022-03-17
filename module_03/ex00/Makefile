@@ -6,11 +6,11 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 14:30:05 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/16 15:04:00 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/17 11:07:31 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := AndAction
+NAME := ClapTrap
 
 CC := g++
 
