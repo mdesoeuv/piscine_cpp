@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:55:38 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 10:02:23 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 10:18:37 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,32 @@ int		Karen::getLevel(void)
 void	Karen::filter(std::string level)
 {
 	this->setLevel(level);
-	if (getLevel() == MAX_PROBLEM + 1)
+	switch (getLevel())
 	{
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		return ;
-	}
-	for (int i = 0; i < MAX_PROBLEM ; i++)
-	{
-		if (i >= _selected_level)
-			complain(this->problem_tab[i].level);
+		case DEBUG:
+			complain(this->problem_tab[DEBUG].level);
+			complain(this->problem_tab[INFO].level);
+			complain(this->problem_tab[WARNING].level);
+			complain(this->problem_tab[ERROR].level);
+			break;
+
+		case INFO:	
+			complain(this->problem_tab[INFO].level);
+			complain(this->problem_tab[WARNING].level);
+			complain(this->problem_tab[ERROR].level);
+			break;
+
+		case WARNING:
+			complain(this->problem_tab[WARNING].level);
+			complain(this->problem_tab[ERROR].level);
+			break;
+
+		case ERROR:
+			complain(this->problem_tab[ERROR].level);
+			break;
+
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
 
