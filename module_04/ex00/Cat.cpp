@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:34:21 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 16:43:06 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 16:48:55 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,7 @@ Cat	&Cat::operator=(const Cat& source)
 	return (*this);
 }
 
+void	Cat::makeSound(void)
+{
+	std::cout << "meooowwwww" << std::endl;
+}

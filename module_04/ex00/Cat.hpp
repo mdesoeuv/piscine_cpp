@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:35:00 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 16:43:44 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 16:45:11 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "Animal.hpp"
 
-class Cat
+class Cat : public Animal
 {
 	private:
 
