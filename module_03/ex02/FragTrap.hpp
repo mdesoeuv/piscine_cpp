@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:15:04 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/17 13:12:41 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 10:48:19 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@
 
 class FragTrap : public ClapTrap
 {
-	private:
+	protected:
+
+		static const unsigned ATTACK_DAMAGE;
+		static const unsigned HITPOINTS;
+		static const unsigned ENERGY;
 		
 	public:
 		FragTrap(void);
