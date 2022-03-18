@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 10:34:00 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 09:56:13 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 10:21:40 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	std::string	level_input(argv[1]);
-	KarenHerself.setLevel(level_input);
 	KarenHerself.filter(level_input);
 	return (0);
 }
