@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 10:24:34 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/10 13:48:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 09:40:12 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 	std::ofstream	output_file(fileout_name, std::ios::out | std::ios::trunc);
 	if (!output_file)
 	{
-		std::cerr << "error: cannot create output file" << std::endl;
+		std::cout << "error: cannot create output file" << std::endl;
 		input_file.close();
 		return (EXIT_FAILURE);
 	}

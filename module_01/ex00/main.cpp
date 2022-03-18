@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:13:46 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/09 12:17:43 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 09:28:39 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,16 @@ int	main(void)
 {
 	Zombie* Marcel;
 
-	Marcel = newZombie("Marcel");
-	Marcel->announce();
+	try
+	{
+		Marcel = newZombie("Marcel");
+		Marcel->announce();
+		delete Marcel;
+	}
+	catch(std::bad_alloc& e)
+	{
+		std::cout << e.what() << '\n';
+		return (EXIT_FAILURE);
+	}
 	randomChump("Roger");
-	delete Marcel;
 }

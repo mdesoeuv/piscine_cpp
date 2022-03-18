@@ -6,17 +6,17 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 14:30:05 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/11 12:43:22 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/18 09:38:22 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := LethalJackass
 
-CC := g++
+CC := c++
 
 CFLAGS := -Wall -Werror -Wextra -g3 -std=c++98
 
-DEBUG := -fsanitize=address
+#DEBUG := -fsanitize=address
 
 SRCS := Weapon.cpp \
 		HumanA.cpp \

@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:58:59 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/09 18:16:19 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 09:38:59 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 Weapon::Weapon(void)
 {
-	std::cout << "weapon constructor called" << std::endl;
+	std::cout << "Weapon constructor called" << std::endl;
 }
 
 Weapon::Weapon(std::string type) : _type(type)
 {
-	std::cout << "weapon constructor called" << std::endl;
+	std::cout << "Weapon constructor called" << std::endl;
 }
 
 Weapon::~Weapon(void)
 {	
-	std::cout << "weapon destructor called" << std::endl;
+	std::cout << "Weapon destructor called" << std::endl;
 }
 
 const std::string&	Weapon::getType(void) const

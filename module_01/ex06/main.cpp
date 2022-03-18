@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 10:34:00 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/11 12:32:09 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 09:56:13 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,6 @@ int	main(int argc, char **argv)
 	}
 	std::string	level_input(argv[1]);
 	KarenHerself.setLevel(level_input);
-	if (KarenHerself.getLevel() == MAX_PROBLEM + 1)
-	{
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		return (0);
-	}
-	KarenHerself.filter("DEBUG");
-	KarenHerself.filter("INFO");
-	KarenHerself.filter("WARNING");
-	KarenHerself.filter("ERROR");
+	KarenHerself.filter(level_input);
 	return (0);
 }

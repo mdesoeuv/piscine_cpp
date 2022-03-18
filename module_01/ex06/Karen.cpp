@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:55:38 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/11 12:31:01 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 10:02:23 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,17 @@ int		Karen::getLevel(void)
 
 void	Karen::filter(std::string level)
 {
-	if (level_compute(level) >= _selected_level)
-		complain(level);
+	this->setLevel(level);
+	if (getLevel() == MAX_PROBLEM + 1)
+	{
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		return ;
+	}
+	for (int i = 0; i < MAX_PROBLEM ; i++)
+	{
+		if (i >= _selected_level)
+			complain(this->problem_tab[i].level);
+	}
 }
 
 void	Karen::complain(std::string level)

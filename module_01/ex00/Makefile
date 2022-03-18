@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 11:20:30 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/11 12:43:44 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/18 09:22:45 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC := c++
 
 CFLAGS := -Wall -Wextra -Werror -std=c++98
 
-DEBUG := -fsanitize=address -g3
+#DEBUG := -fsanitize=address -g3
 
 SRCS :=	Zombie.cpp \
 		newZombie.cpp \
