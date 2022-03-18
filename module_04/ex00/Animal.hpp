@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:07:20 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 16:19:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 16:52:06 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ class Animal
 		Animal(const Animal& source);
 		~Animal(void);
 		Animal	&operator=(const Animal& source);
+
+		void			getType(void);
+		virtual void	makeSound(void);
 
 };
 

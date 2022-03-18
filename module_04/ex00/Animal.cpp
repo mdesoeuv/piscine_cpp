@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:09:42 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 16:40:35 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 16:53:23 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ Animal	&Animal::operator=(const Animal& source)
 	this->type = source.type;
 
 	return (*this);
+}
+
+void	Animal::getType(void)
+{
+	std::cout << type << std::cout;
 }
 
 void	Animal::makeSound(void)
