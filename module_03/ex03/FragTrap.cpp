@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:11:19 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 10:46:54 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 15:52:51 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ FragTrap::FragTrap(void) : ClapTrap()
 	_HitPoints = HITPOINTS;
 	_EnergyPoints = ENERGY;
 	_AttackDamage = ATTACK_DAMAGE;
+	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)

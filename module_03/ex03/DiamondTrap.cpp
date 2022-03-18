@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:51:39 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 15:39:50 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 15:53:36 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap()
 	_AttackDamage = FragTrap::ATTACK_DAMAGE;
 	_HitPoints = FragTrap::HITPOINTS;
 	_EnergyPoints = ScavTrap::ENERGY;
+	std::cout << "DiamondTrap default constructor called" << std::endl;
+
 }
 
 DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), _Name(name) {
@@ -24,7 +26,8 @@ DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"
 	_HitPoints = FragTrap::HITPOINTS;
 	_EnergyPoints = ScavTrap::ENERGY;
 
-std::cout << _Name << " HP : " << _HitPoints << " Energy : " << _EnergyPoints << " Attack : " << _AttackDamage << std::endl;
+	std::cout << "DiamondTrap constructor called" << std::endl;
+
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& source) :	ClapTrap(source), 
@@ -32,6 +35,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap& source) :	ClapTrap(source),
 														FragTrap(source),
 														_Name(source._Name)
 {
+	std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap(void)

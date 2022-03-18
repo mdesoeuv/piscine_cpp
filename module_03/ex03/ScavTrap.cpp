@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:10:12 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 10:45:07 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 15:52:36 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 	_HitPoints = HITPOINTS;
 	_EnergyPoints = ENERGY;
 	_AttackDamage = ATTACK_DAMAGE;
+	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
