@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:35:00 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 18:29:23 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 18:35:26 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 	private:
 
 	public:
 
-		Cat(void);
-		Cat(const Cat& source);
-		~Cat(void);
-		Cat	&operator=(const Cat& source);
+		WrongCat(void);
+		WrongCat(const WrongCat& source);
+		~WrongCat(void);
+		WrongCat	&operator=(const WrongCat& source);
 		void	makeSound(void) const;
 
 };

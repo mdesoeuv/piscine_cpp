@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:15:36 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 16:38:53 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/18 18:29:27 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Dog : public Animal
 		Dog(const Dog& source);
 		~Dog(void);
 		Dog	&operator=(const Dog& source);
-		void	makeSound(void);
+		void	makeSound(void) const;
 
 };
 
