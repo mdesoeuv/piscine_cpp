@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 16:07:20 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 16:19:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Created: 2022/03/18 16:15:36 by mdesoeuv          #+#    #+#             */
+/*   Updated: 2022/03/18 16:38:53 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <string>
+# include "Animal.hpp"
 
-class Animal
+class Dog : public Animal
 {
-	protected:
-
-		std::string	type;
+	private:
 
 	public:
-	
-		Animal(void);
-		Animal(const Animal& source);
-		~Animal(void);
-		Animal	&operator=(const Animal& source);
+
+		Dog(void);
+		Dog(const Dog& source);
+		~Dog(void);
+		Dog	&operator=(const Dog& source);
+		void	makeSound(void);
 
 };
 

@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 16:07:20 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 16:19:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Created: 2022/03/18 16:22:10 by mdesoeuv          #+#    #+#             */
+/*   Updated: 2022/03/18 16:32:59 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Dog.hpp"
+#include <iostream>
 
-# include <string>
-
-class Animal
+Dog::Dog(void) : Animal()
 {
-	protected:
+	std::cout << "Dog default constructor called" << std::endl;
+}
 
-		std::string	type;
+Dog::Dog(const Dog& source) : Animal()
+{
+	type = source.type;
+	std::cout << "Dog copy constructor called" << std::endl;
+}
 
-	public:
-	
-		Animal(void);
-		Animal(const Animal& source);
-		~Animal(void);
-		Animal	&operator=(const Animal& source);
+Dog::~Dog(void)
+{
+	std::cout << "Dog destructor called" << std::endl;
+}
 
-};
+Dog	&Dog::operator=(const Dog& source)
+{
+	this->type = source.type;
 
-#endif
+	return (*this);
+}
+

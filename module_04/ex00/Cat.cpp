@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 16:07:20 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 16:19:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Created: 2022/03/18 16:34:21 by mdesoeuv          #+#    #+#             */
+/*   Updated: 2022/03/18 16:43:06 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Cat.hpp"
+#include <iostream>
 
-# include <string>
-
-class Animal
+Cat::Cat(void) : Animal()
 {
-	protected:
+	std::cout << "Cat default constructor called" << std::endl;
+}
 
-		std::string	type;
+Cat::Cat(const Cat& source) : Animal()
+{
+	type = source.type;
+	std::cout << "Cat copy constructor called" << std::endl;
+}
 
-	public:
-	
-		Animal(void);
-		Animal(const Animal& source);
-		~Animal(void);
-		Animal	&operator=(const Animal& source);
+Cat::~Cat(void)
+{
+	std::cout << "Cat destructor called" << std::endl;
+}
 
-};
+Cat	&Cat::operator=(const Cat& source)
+{
+	this->type = source.type;
 
-#endif
+	return (*this);
+}
+

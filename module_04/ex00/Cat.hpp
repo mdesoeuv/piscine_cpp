@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 16:07:20 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 16:19:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Created: 2022/03/18 16:35:00 by mdesoeuv          #+#    #+#             */
+/*   Updated: 2022/03/18 16:43:44 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include <string>
+# include "Animal.hpp"
 
-class Animal
+class Cat
 {
-	protected:
-
-		std::string	type;
+	private:
 
 	public:
-	
-		Animal(void);
-		Animal(const Animal& source);
-		~Animal(void);
-		Animal	&operator=(const Animal& source);
+
+		Cat(void);
+		Cat(const Cat& source);
+		~Cat(void);
+		Cat	&operator=(const Cat& source);
+		void	makeSound(void);
 
 };
 
