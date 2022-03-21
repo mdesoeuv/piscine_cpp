@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:22:10 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 17:04:21 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/21 17:45:36 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ Dog::~Dog(void)
 Dog	&Dog::operator=(const Dog& source)
 {
 	this->type = source.type;
+	delete dogBrain;
+	dogBrain = new Brain(*source.dogBrain);
 	*dogBrain = *source.dogBrain;
 
 	return (*this);
