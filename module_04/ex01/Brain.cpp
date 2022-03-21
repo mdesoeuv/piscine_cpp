@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:04:35 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 10:48:04 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/21 10:58:14 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Brain	&Brain::operator=(const Brain& source)
 
 void	Brain::displayIdea(size_t index) const
 {
-	if (index > 100)
+	if (index >= 100)
 	{
 		return ;
 	}
@@ -55,7 +55,7 @@ void	Brain::displayIdea(size_t index) const
 
 void	Brain::setIdea(const std::string& newIdea, size_t index)
 {
-	if (index > 100)
+	if (index >= 100)
 	{
 		std::cout << "this Brain cannot hold more than 100 ideas, please be nice with it." << std::endl;
 		return ;
