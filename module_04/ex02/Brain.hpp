@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 16:15:36 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 17:03:55 by mdesoeuv         ###   ########lyon.fr   */
+/*   Created: 2022/03/21 09:00:38 by mdesoeuv          #+#    #+#             */
+/*   Updated: 2022/03/21 10:53:43 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include <string>
 
-class Dog : public Animal
+class Brain
 {
-	private:
+	private :
+	
+		std::string ideas[100];
 
-		Brain *dogBrain;
+	public :
 
-	public:
-
-		Dog(void);
-		Dog(const Dog& source);
-		~Dog(void);
-		Dog	&operator=(const Dog& source);
-		void	makeSound(void) const;
-		void	displayFirstTenIdeas(void) const;
+		Brain(void);
+		Brain(const Brain& source);
+		~Brain(void);
+		Brain	&operator=(const Brain& source);
+		void	displayIdea(size_t index) const;
 		void	setIdea(const std::string& newIdea, size_t index);
+		
 
 };
 

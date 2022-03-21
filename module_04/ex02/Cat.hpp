@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 16:15:36 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 17:03:55 by mdesoeuv         ###   ########lyon.fr   */
+/*   Created: 2022/03/18 16:35:00 by mdesoeuv          #+#    #+#             */
+/*   Updated: 2022/03/21 10:38:15 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Dog : public Animal
+class Cat : public Animal
 {
 	private:
 
-		Brain *dogBrain;
+		Brain *catBrain;
 
 	public:
 
-		Dog(void);
-		Dog(const Dog& source);
-		~Dog(void);
-		Dog	&operator=(const Dog& source);
+		Cat(void);
+		Cat(const Cat& source);
+		~Cat(void);
+		Cat	&operator=(const Cat& source);
 		void	makeSound(void) const;
 		void	displayFirstTenIdeas(void) const;
 		void	setIdea(const std::string& newIdea, size_t index);
-
 };
 
 #endif
