@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 15:56:09 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 18:36:35 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/21 08:38:55 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(void)
 		const Animal* rex = new Dog();
 		const Animal* minou = new Cat();
 
+		std::cout << std::endl;
 		std::cout << meta->getType() << " : ";
 		meta->makeSound();
 		std::cout << std::endl;
@@ -42,6 +43,7 @@ int	main(void)
 		const WrongAnimal* meta = new WrongAnimal();
 		const WrongAnimal* miaouss = new WrongCat();
 
+		std::cout << std::endl;
 		std::cout << meta->getType() << " : ";
 		meta->makeSound();
 		std::cout << std::endl;
