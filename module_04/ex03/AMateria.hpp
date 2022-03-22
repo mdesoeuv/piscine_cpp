@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:23:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 17:38:40 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/22 10:01:32 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class AMateria
 	protected:
 
 		std::string	type;
-		AMateria	&operator=(const AMateria& source);
 
 	public:
 

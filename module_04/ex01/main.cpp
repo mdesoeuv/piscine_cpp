@@ -6,13 +6,15 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:31:34 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 10:58:01 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/22 10:11:52 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include <iostream>
+
+#include <assert.h>
 
 int	main(void)
 {
@@ -29,7 +31,7 @@ int	main(void)
 	
 	Cat *StrangeCat;
 
-	StrangeCat = (Cat *)(Animals[50]);
+	StrangeCat = dynamic_cast<Cat*>(Animals[50]);
 	
 	Cat CopyCat(*StrangeCat);
 

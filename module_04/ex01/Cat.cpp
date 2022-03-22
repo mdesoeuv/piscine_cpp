@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:34:21 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 17:45:04 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/22 10:02:47 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ Cat::Cat(void) : Animal("Cat")
 
 Cat::Cat(const Cat& source) : Animal(source)
 {
-	catBrain = new Brain();
-	*catBrain = *source.catBrain;
+	catBrain = new Brain(*source.catBrain);
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 
@@ -36,8 +35,6 @@ Cat::~Cat(void)
 Cat	&Cat::operator=(const Cat& source)
 {
 	this->type = source.type;
-	delete catBrain;
-	catBrain = new Brain(*source.catBrain);
 	*catBrain = *source.catBrain;
 
 	return (*this);

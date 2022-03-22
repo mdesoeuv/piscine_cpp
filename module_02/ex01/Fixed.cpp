@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:00:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 10:30:19 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/22 13:18:22 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ const int	Fixed::_fraction_bit_number = 8;
 
 Fixed::Fixed(void) : _raw_value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Fixed constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& fixed)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Fixed Copy constructor called" << std::endl;
 	this->_raw_value = fixed._raw_value;
 }
 
@@ -38,7 +38,7 @@ Fixed::Fixed(const float n)
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Fixed Destructor called" << std::endl;
 }
 
 Fixed	&Fixed::operator=(const Fixed &source)

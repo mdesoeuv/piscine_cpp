@@ -6,17 +6,17 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 14:30:05 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/11 17:18:26 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/22 13:12:39 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := Fixed
 
-CC := g++
+CC := c++
 
 CFLAGS := -Wall -Werror -Wextra -g3 -std=c++98
 
-DEBUG := -fsanitize=address
+#DEBUG := -fsanitize=address
 
 SRCS := Fixed.cpp \
 		main.cpp

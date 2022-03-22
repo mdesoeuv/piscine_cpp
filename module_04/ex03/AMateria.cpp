@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:32:07 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 17:39:26 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/22 10:01:39 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,3 @@ AMateria::~AMateria(void)
 {
 	std::cout << "AMateria destructor called" << std::endl;
 }
-
-AMateria	&AMateria::operator=(const AMateria& source)
-{
-	// type = source.type; no reason to copy the type
-}
-
