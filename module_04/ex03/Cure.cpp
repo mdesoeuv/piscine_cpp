@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:34:45 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 14:34:42 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 14:45:02 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Cure	&Cure::operator=(const Cure& source)
 
 Cure	*Cure::clone(void) const
 {
-	Cure *CureClone = new Cure(*this);
+	Cure *CureClone = new Cure();
 
 	return (CureClone);
 }

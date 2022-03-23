@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 15:56:17 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/23 13:38:56 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/23 15:57:42 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,15 @@ CXX := c++
 
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -g3
 
-DEBUG := -fsanitize=address		
+#DEBUG := -fsanitize=address		
 		
 SRCS := AMateria.cpp \
+		ICharacter.cpp \
 		Character.cpp \
 		Cure.cpp \
 		Ice.cpp \
-		ICharacter.cpp \
+		IMateriaSource.cpp \
+		MateriaSource.cpp \
 		main.cpp
 
 OBJS := $(SRCS:.cpp=.o)
@@ -34,11 +36,11 @@ OBJS_FILES := $(addprefix $(OBJS_DIR), $(OBJS))
 all : $(NAME)
 
 $(NAME) :	$(OBJS_FILES)
-			$(CXX) $(CXXFLAGS) $(OBJS_FILES) -o $(NAME)
+			$(CXX) $(CXXFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
 
 $(OBJS_DIR)%.o :	%.cpp Makefile AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp
 					mkdir -p $(OBJS_DIR)
-					$(CXX) $(CXXFLAGS) -c $< -o $@
+					$(CXX) $(CXXFLAGS) $(DEBUG) -c $< -o $@
 
 clean :
 		rm -rf $(OBJS_DIR)

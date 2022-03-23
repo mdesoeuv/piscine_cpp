@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:34:45 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 14:30:35 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 14:44:55 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Ice	&Ice::operator=(const Ice& source)
 
 Ice	*Ice::clone(void) const
 {
-	Ice *IceClone = new Ice(*this);
+	Ice *IceClone = new Ice();
 
 	return (IceClone);
 }

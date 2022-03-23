@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:48:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 14:32:45 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 15:05:23 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,10 @@ Character::Character(const Character& source) :	ICharacter(source),
 	for (int i = 0; i < 4; ++i)
 	{
 		slot[i] = source.slot[i];
-		std::cout << "here" << i << source.slot[i] << std::endl;
 		if (source.slot[i])
 			inventory[i] = source.inventory[i]->clone();
 		else
 			inventory[i] = NULL;
-		std::cout << "here2" << std::endl;
-		
 	}
 }
 
@@ -94,7 +91,7 @@ void	Character::equip(AMateria* m)
 	{	
 		if (slot[i] == 0)
 		{
-			inventory[equippedMateriaNb] = m;
+			inventory[i] = m;
 			slot[i] = 1;
 			break ;
 		}
@@ -111,11 +108,12 @@ void	Character::unequip(int index)
 		std::cout << "unable to unequip : no materia equipped" << std::endl;
 		return ;
 	}
-	if (index >= equippedMateriaNb || slot[index] == 0)
+	if (index >= 4 || slot[index] == 0)
 	{
-		std::cout << "unable to unequip : no materia equipped in that slot" << std::endl;
+		std::cout << "unable to unequip : no materia equipped slot " << index << std::endl;
 		return ; 
 	}
+	std::cout << inventory[index]->getType() << " materia unequipped from slot " << index << std::endl;
 	inventory[index] = NULL;
 	slot[index] = 0;
 	equippedMateriaNb--;
@@ -128,9 +126,9 @@ void	Character::use(int index, ICharacter& target)
 		std::cout << "unable to use : no materia equipped" << std::endl;
 		return ;
 	}
-	if (index >= equippedMateriaNb || slot[index] == 0)
+	if (index >= 4 || slot[index] == 0)
 	{
-		std::cout << "unable to use : no materia equipped in that slot" << std::endl;
+		std::cout << "unable to use : no materia equipped in slot" << index << std::endl;
 		return ; 
 	}
 	inventory[index]->use(target);
