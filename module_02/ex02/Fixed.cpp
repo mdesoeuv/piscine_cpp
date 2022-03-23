@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:00:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/22 13:18:02 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 11:22:37 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,27 @@ Fixed	Fixed::operator++(int)
 	Fixed	temp(*this);
 
 	this->_raw_value += 1;
+	return (temp);
+}
+
+/* prefix decrementation */
+
+Fixed	Fixed::operator--(void)
+{
+	this->_raw_value -= 1;
+	return (*this);
+}
+
+/* 
+** postfix decrementation copy the source 
+** then decrements the source and returns the copy
+*/
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	temp(*this);
+
+	this->_raw_value -= 1;
 	return (temp);
 }
 
