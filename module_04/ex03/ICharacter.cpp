@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   ICharacter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 17:46:31 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 11:25:55 by mdesoeuv         ###   ########lyon.fr   */
+/*   Created: 2022/03/23 11:53:56 by mdesoeuv          #+#    #+#             */
+/*   Updated: 2022/03/23 11:54:57 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#include "ICharacter.hpp"
+#include <iostream>
 
-class ICharacter
+ICharacter::~ICharacter(void)
 {
-	public:
-
-		virtual 					~ICharacter(void);
-		virtual std::string const	&getName(void) const = 0;
-		virtual void				equip(AMateria* m) = 0;
-		virtual void				unequip(int index) = 0;
-		virtual void				use(int index, ICharacter& target) = 0;
-
-};
-
-#endif
+	std::cout << "ICharacter destructor called" << std::endl;
+}
