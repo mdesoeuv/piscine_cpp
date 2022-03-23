@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 13:28:34 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 15:59:41 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 16:02:16 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,14 @@ int	main(void)
 	MateriaSource	MateriaGenerator;
 	AMateria		*NewMateria = new Ice();
 
+	std::cout << std::endl;
 	MateriaGenerator.learnMateria(NewMateria);
 	AMateria *result = MateriaGenerator.createMateria("zoub");
 	if (result == NULL)
 		std::cout << "materia not learned" << std::endl;
 	result = MateriaGenerator.createMateria("Ice");
 	result->use(Zack);
+	std::cout << std::endl;
 	delete NewMateria;
 	delete result;
 

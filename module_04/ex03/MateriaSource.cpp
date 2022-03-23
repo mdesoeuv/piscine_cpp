@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 15:20:47 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 15:56:06 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 16:01:36 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ AMateria	*MateriaSource::createMateria(std::string const & type)
 			return (materiaTab[i]->clone());
 		i++;
 	}
+	std::cout << "type not learned : " << type << std::endl;
 	return (NULL);
 }
