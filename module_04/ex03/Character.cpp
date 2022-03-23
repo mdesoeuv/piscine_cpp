@@ -6,14 +6,14 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:48:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 10:28:35 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 14:32:45 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include <iostream>
 
-Character::Character(void) : equippedMateriaNb(0), name("")
+Character::Character(void) : ICharacter(), name(""), equippedMateriaNb(0)
 {
 	for (size_t i = 0; i < 4; ++i)
 	{
@@ -22,7 +22,7 @@ Character::Character(void) : equippedMateriaNb(0), name("")
 	std::cout << "Character default constructor called" << std::endl;
 }
 
-Character::Character(std::string Name) : equippedMateriaNb(0), name(Name)
+Character::Character(std::string Name) : ICharacter(), name(Name), equippedMateriaNb(0)
 {
 	for (size_t i = 0; i < 4; ++i)
 	{
@@ -31,21 +31,30 @@ Character::Character(std::string Name) : equippedMateriaNb(0), name(Name)
 	std::cout << "Character constructor called" << std::endl;
 }
 
-Character::Character(const Character& source) :	equippedMateriaNb(source.equippedMateriaNb),
-												name(source.name)
+Character::Character(const Character& source) :	ICharacter(source),
+												name(source.name),
+												equippedMateriaNb(source.equippedMateriaNb)
 {
-	for (size_t i = 0; i < 4; ++i)
+	for (int i = 0; i < 4; ++i)
 	{
 		slot[i] = source.slot[i];
-	}
-	for (size_t i = 0; i < source.equippedMateriaNb; ++i)
-	{
-		inventory[i] = source.inventory[i]->clone();
+		std::cout << "here" << i << source.slot[i] << std::endl;
+		if (source.slot[i])
+			inventory[i] = source.inventory[i]->clone();
+		else
+			inventory[i] = NULL;
+		std::cout << "here2" << std::endl;
+		
 	}
 }
 
 Character::~Character(void)
 {
+	for (int i = 0; i < 4; ++i)
+	{
+		if (slot[i])
+			delete inventory[i];
+	}
 	std::cout << "Character destructor called" << std::endl;
 }
 
@@ -65,6 +74,7 @@ Character	&Character::operator=(const Character& source)
 		if (source.slot[i])
 			inventory[i] = source.inventory[i]->clone();
 	}
+	return (*this);
 }
 
 std::string const	&Character::getName(void) const
@@ -91,7 +101,7 @@ void	Character::equip(AMateria* m)
 		i++;
 	}
 	equippedMateriaNb++;
-	std::cout << "materia equipped" << std::endl;	
+	std::cout << m->getType() << " materia equipped in slot " << i << std::endl;	
 }
 
 void	Character::unequip(int index)

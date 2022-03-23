@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:23:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/22 10:01:32 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 13:36:48 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string>
 
 # include "ICharacter.hpp"
+
+class	ICharacter;
 
 class AMateria
 {
@@ -28,7 +30,7 @@ class AMateria
 		AMateria(void);
 		AMateria(std::string const &SourceType);
 		AMateria(const AMateria& source);
-		~AMateria(void);
+		virtual	~AMateria(void);
 
 		std::string const &getType(void) const;
 		

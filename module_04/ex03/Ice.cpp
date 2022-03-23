@@ -6,24 +6,19 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:34:45 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 11:51:46 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 14:30:35 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include <iostream>
 
-Ice::Ice(void) : AMateria()
+Ice::Ice(void) : AMateria("Ice")
 {
 	std::cout << "Ice default constructor called" << std::endl;
 }
 
-Ice::Ice(std::string const &SourceType) : AMateria(SourceType)
-{
-	std::cout << "Ice constructor called" << std::endl;	
-}
-
-Ice::Ice(const Ice& source) : AMateria(source)
+Ice::Ice(const Ice& source) : AMateria(source.type)
 {
 	std::cout << "Ice copy constructor called" << std::endl;
 }
@@ -36,6 +31,8 @@ Ice::~Ice(void)
 Ice	&Ice::operator=(const Ice& source)
 {
 	type = source.type;
+
+	return (*this);
 }
 
 Ice	*Ice::clone(void) const

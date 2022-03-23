@@ -6,11 +6,11 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 15:56:17 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/21 17:23:16 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/23 13:38:56 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := AbstractAnimals
+NAME := FFVII
 
 CXX := c++
 
@@ -19,6 +19,10 @@ CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -g3
 DEBUG := -fsanitize=address		
 		
 SRCS := AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		ICharacter.cpp \
 		main.cpp
 
 OBJS := $(SRCS:.cpp=.o)
@@ -32,7 +36,7 @@ all : $(NAME)
 $(NAME) :	$(OBJS_FILES)
 			$(CXX) $(CXXFLAGS) $(OBJS_FILES) -o $(NAME)
 
-$(OBJS_DIR)%.o :	%.cpp Makefile Dog.hpp Cat.hpp Animal.hpp Brain.hpp
+$(OBJS_DIR)%.o :	%.cpp Makefile AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp
 					mkdir -p $(OBJS_DIR)
 					$(CXX) $(CXXFLAGS) -c $< -o $@
 

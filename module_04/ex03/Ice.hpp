@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:26:13 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 11:34:30 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 14:30:53 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Ice : public AMateria
 	public:
 
 		Ice(void);
-		Ice(std::string const &SourceType);
 		Ice(const Ice& source);
 		~Ice(void);
 		

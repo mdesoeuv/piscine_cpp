@@ -6,24 +6,19 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:34:45 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 11:53:32 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 14:34:42 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 #include <iostream>
 
-Cure::Cure(void) : AMateria()
+Cure::Cure(void) : AMateria("Cure")
 {
 	std::cout << "Cure default constructor called" << std::endl;
 }
 
-Cure::Cure(std::string const &SourceType) : AMateria(SourceType)
-{
-	std::cout << "Cure constructor called" << std::endl;	
-}
-
-Cure::Cure(const Cure& source) : AMateria(source)
+Cure::Cure(const Cure& source) : AMateria(source.type)
 {
 	std::cout << "Cure copy constructor called" << std::endl;
 }
@@ -36,6 +31,8 @@ Cure::~Cure(void)
 Cure	&Cure::operator=(const Cure& source)
 {
 	type = source.type;
+
+	return (*this);
 }
 
 Cure	*Cure::clone(void) const

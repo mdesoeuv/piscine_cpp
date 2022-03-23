@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:52:20 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 10:19:28 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/23 14:10:29 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Character : public ICharacter
 
 		std::string	name;
 		AMateria	*inventory[4];
-		size_t		equippedMateriaNb;
+		int			equippedMateriaNb;
 		int			slot[4];
 		
 		
