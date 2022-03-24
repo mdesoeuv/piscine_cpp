@@ -6,11 +6,11 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 15:56:17 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/23 16:08:54 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/24 08:50:32 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := AbstractAnimals
+NAME := Bureaucrat
 
 CXX := c++
 
@@ -32,7 +32,7 @@ all : $(NAME)
 $(NAME) :	$(OBJS_FILES)
 			$(CXX) $(CXXFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
 
-$(OBJS_DIR)%.o :	%.cpp Makefile Dog.hpp Cat.hpp Animal.hpp Brain.hpp
+$(OBJS_DIR)%.o :	%.cpp Makefile Bureaucrat.hpp
 					mkdir -p $(OBJS_DIR)
 					$(CXX) $(CXXFLAGS) $(DEBUG) -c $< -o $@
 
