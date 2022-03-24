@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 09:42:43 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 10:43:42 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 11:32:55 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,17 @@ const char *Form::GradeTooLowException::what(void) const throw()
 const char *Form::GradeTooHighException::what(void) const throw()
 {
 	return ("Form::GradeTooHighException");
+}
+
+const char *Form::UnsignedFormException::what(void) const throw()
+{
+	return ("Form::UnsignedFormException");
+}
+
+void	Form::checkRequirements(Bureaucrat const &executor) const
+{
+	if (signature == false)
+		throw Form::UnsignedFormException();
+	if (executor.getGrade() > getExecGrade())
+		throw Form::GradeTooLowException();
 }
