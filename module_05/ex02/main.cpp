@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 08:56:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 15:20:36 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 15:33:23 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
@@ -22,6 +23,8 @@ int	main(void)
 
 	ShrubberyCreationForm		A("A493728B01", "Forest B12");
 	RobotomyRequestForm			R("R7294772", "Paul");
+	PresidentialPardonForm		P("P212689", "Fantomas");
+	
 
 	
 	std::cout << std::endl << Michel << JeanLouis << std::endl;
@@ -47,6 +50,10 @@ int	main(void)
 	JeanLouis.executeForm(R);
 
 	std::cout << std::endl;
+
+	Michel.executeForm(P);
+	Michel.signForm(P);
+	Michel.executeForm(P);
 	
 	return (0);
 }
