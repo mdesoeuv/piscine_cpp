@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 11:08:44 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 12:29:34 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 15:02:35 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 // {
 // }
 
-void	ShrubberyCreationForm::createShrubbery(void) const
+void	ShrubberyCreationForm::specialFunction(void) const
 {
 	
 	std::ofstream	output_file(target + "_shrubbery", std::ios::out | std::ios::app);
@@ -63,22 +63,22 @@ void	ShrubberyCreationForm::createShrubbery(void) const
 	output_file.close();
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
-{
-	try
-	{
-		checkRequirements(executor);
-	}
-	catch(Form::UnsignedFormException& e)
-	{
-		std::cerr << e.what() << std::endl;
-		throw Form::ExecutionErrorException();
+// void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+// {
+// 	try
+// 	{
+// 		checkRequirements(executor);
+// 	}
+// 	catch(Form::UnsignedFormException& e)
+// 	{
+// 		std::cerr << e.what() << std::endl;
+// 		throw Form::ExecutionErrorException();
 		
-	}
-	catch(Form::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << std::endl;
-		throw Form::ExecutionErrorException();
-	}
-	createShrubbery();
-}
+// 	}
+// 	catch(Form::GradeTooLowException& e)
+// 	{
+// 		std::cerr << e.what() << std::endl;
+// 		throw Form::ExecutionErrorException();
+// 	}
+// 	specialFunction();
+// }

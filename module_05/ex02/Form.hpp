@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 09:32:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 12:24:19 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 15:01:16 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ class Form
 		
 	protected:	
 		
-		void	checkRequirements(Bureaucrat const &executor) const;
+		void			checkRequirements(Bureaucrat const &executor) const;
+		virtual void	specialFunction(void) const = 0;
 	
 	public:
 
@@ -79,7 +80,7 @@ class Form
 			
 		};
 
-		virtual void	execute(Bureaucrat const &executor) const = 0;
+		void			execute(Bureaucrat const &executor) const;
 };
 
 #endif
