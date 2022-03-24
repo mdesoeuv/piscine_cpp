@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 15:59:28 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 16:41:44 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 16:44:29 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ Intern::~Intern(void)
 
 Form	*Intern::makeForm(const std::string& formType, const std::string& target)
 {
-	for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < 3; ++i)
 	{
 		if (formTab[i].name == formType)
 			return ((this->*formTab[i].function_ptr)(target));
 	}
-	// throw FormCreationErrorException();
+	throw FormCreationErrorException();
 	return (NULL);
 }
 
