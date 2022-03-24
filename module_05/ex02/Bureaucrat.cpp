@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:15:34 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 10:44:18 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 12:17:19 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,17 @@ void	Bureaucrat::signForm(Form& form)
 		std::cerr << e.what() << std::endl;
 	}	
 	
+}
+
+void	Bureaucrat::executeForm(Form const& form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << getName() << " executed Form " << form.getName() << std::endl;
+	}
+	catch (Form::ExecutionErrorException& e)
+	{
+		std::cerr << getName() << " couldn't execute Form " << form.getName() << " because " << e.what() << std::endl;
+	}
 }

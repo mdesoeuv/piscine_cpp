@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 09:32:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 11:32:27 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 12:24:19 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ class Form
 		const int			execGrade;
 		
 		Form	&operator=(const Form& rhs);
+		
+	protected:	
+		
 		void	checkRequirements(Bureaucrat const &executor) const;
 	
 	public:
@@ -61,6 +64,14 @@ class Form
 		};
 		
 		class UnsignedFormException : public std::exception
+		{
+			public:
+
+				const char *what(void) const throw ();
+			
+		};
+		
+		class ExecutionErrorException : public std::exception
 		{
 			public:
 

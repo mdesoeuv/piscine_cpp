@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 11:02:15 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 11:26:04 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 11:52:21 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class ShrubberyCreationForm : public Form
 		
 		ShrubberyCreationForm(void);
 		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm& rhs);
-
-}
+		void	createShrubbery(void) const;
+};
 
 #endif

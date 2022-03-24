@@ -6,11 +6,13 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 11:08:44 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 11:33:03 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 12:29:34 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include <iostream>
+#include <fstream>
 
 // ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("default form", 145, 137), target("unknown")
 // {
@@ -36,7 +38,47 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 // {
 // }
 
+void	ShrubberyCreationForm::createShrubbery(void) const
+{
+	
+	std::ofstream	output_file(target + "_shrubbery", std::ios::out | std::ios::app);
+	if (!output_file)
+	{
+		std::cout << "error: cannot create output file" << std::endl;
+		throw Form::ExecutionErrorException();
+
+	}
+	output_file << "             v .   ._, |_  .,\n" 
+	<< "           -._\\/  .  \\ /    |/_\n" <<
+"               \\  _\\, y | \\//\n" << 
+"         _\\_.___\\, \\/ -.\\||\n" << 
+"           7-,--. ._||  / / ,\n" << 
+"           /       -.  ./ / |/_.\n" << 
+"                     |    |//\n" << 
+"                     |_    /\n" <<
+"                     |-   |\n" << 
+"                     |   =|\n" << 
+"                     |    |\n" <<
+"--------------------/ ,  . \\--------._\n";
+	output_file.close();
+}
+
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	this->
+	try
+	{
+		checkRequirements(executor);
+	}
+	catch(Form::UnsignedFormException& e)
+	{
+		std::cerr << e.what() << std::endl;
+		throw Form::ExecutionErrorException();
+		
+	}
+	catch(Form::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << std::endl;
+		throw Form::ExecutionErrorException();
+	}
+	createShrubbery();
 }

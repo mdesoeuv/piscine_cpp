@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:09:08 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 10:28:08 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 12:07:42 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ class Bureaucrat
 		void				downGrade(void);
 
 		void				signForm(Form& form);
+		void				executeForm(Form const& form);
 
 };
 
