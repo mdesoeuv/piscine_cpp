@@ -6,11 +6,11 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 15:56:17 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/24 15:35:54 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/24 16:12:26 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := FormRequest
+NAME := Form
 
 CXX := c++
 
@@ -23,6 +23,7 @@ SRCS := Bureaucrat.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp \
+		Intern.cpp \
 		main.cpp
 
 OBJS := $(SRCS:.cpp=.o)
@@ -36,7 +37,7 @@ all : $(NAME)
 $(NAME) :	$(OBJS_FILES)
 			$(CXX) $(CXXFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
 
-$(OBJS_DIR)%.o :	%.cpp Makefile Bureaucrat.hpp Form.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp
+$(OBJS_DIR)%.o :	%.cpp Makefile Bureaucrat.hpp Form.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp Intern.hpp
 					mkdir -p $(OBJS_DIR)
 					$(CXX) $(CXXFLAGS) $(DEBUG) -c $< -o $@
 
