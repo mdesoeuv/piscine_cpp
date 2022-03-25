@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:19:49 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/16 11:02:54 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 09:33:01 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,25 @@ int main( void )
 {
 	Fixed a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << "subject tests :" << std::endl;
+	std::cout << "subject tests :" << std::endl << std::endl;
+
+	std::cout << "incrementation :" << std::endl;
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+
+	std::cout << "decrementation :" << std::endl;
+	std::cout << a << std::endl;
+	std::cout << --a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a-- << std::endl;
+	std::cout << a << std::endl << std::endl;
+	
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl;
+	std::cout << "max(a, b) = " << Fixed::max( a, b ) << std::endl;
 
 	std::cout << "\ncomplementary tests :" << std::endl;
 	Fixed c(12);
