@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 11:15:04 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/25 09:58:10 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 11:08:30 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	protected:
 
@@ -24,9 +24,10 @@ class FragTrap : public ClapTrap
 		FragTrap(void);
 		FragTrap(std::string name);
 		FragTrap(const FragTrap& source);
-		~FragTrap(void);
+		virtual ~FragTrap(void);
 		FragTrap	&operator=(const FragTrap& source);
 		
+		void	attack(const std::string& target);
 		void	highFivesGuys(void);
 };
 

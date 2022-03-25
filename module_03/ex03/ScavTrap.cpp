@@ -6,18 +6,24 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:10:12 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/25 11:09:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 11:16:21 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap("", 100, 50, 20)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
+	this->_HitPoints = 100;
+	this->_EnergyPoints = 50;
+	this->_AttackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
+	this->_HitPoints = 100;
+	this->_EnergyPoints = 50;
+	this->_AttackDamage = 20;
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
 

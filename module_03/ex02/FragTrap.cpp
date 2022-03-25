@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:11:19 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/25 09:58:06 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 11:08:45 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ FragTrap::FragTrap(void) : ClapTrap()
 	_HitPoints = 100;
 	_EnergyPoints = 100;
 	_AttackDamage = 30;
+	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -45,6 +46,23 @@ FragTrap	&FragTrap::operator=(const FragTrap& source)
 	ClapTrap::operator=(source);
 	
 	return (*this);
+}
+
+void	FragTrap::attack(const std::string& target)
+{
+	if (_HitPoints == 0)
+	{
+		std::cout << _Name << " is dead and can't perform this action" << std::endl;
+		return ;
+	}
+	if (_EnergyPoints < 1)
+	{
+		std::cout << _Name << " has not enough energy points to perform this action" << std::endl;
+		return ;
+	}
+	std::cout << "FragTrap " << _Name << " attacks " << target << " who looses " << _AttackDamage << " HP !" << std::endl;
+	_EnergyPoints -= 1;
+	
 }
 
 void	FragTrap::highFivesGuys(void)

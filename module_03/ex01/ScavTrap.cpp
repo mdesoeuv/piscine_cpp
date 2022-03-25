@@ -6,18 +6,24 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:10:12 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/25 09:50:02 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 11:16:21 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap("", 100, 50, 20)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
+	this->_HitPoints = 100;
+	this->_EnergyPoints = 50;
+	this->_AttackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
+	this->_HitPoints = 100;
+	this->_EnergyPoints = 50;
+	this->_AttackDamage = 20;
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
@@ -39,6 +45,23 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap& source)
 	this->_Name = source._Name;
 	
 	return (*this);
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (_HitPoints == 0)
+	{
+		std::cout << _Name << " is dead and can't perform this action" << std::endl;
+		return ;
+	}
+	if (_EnergyPoints < 1)
+	{
+		std::cout << _Name << " has not enough energy points to perform this action" << std::endl;
+		return ;
+	}
+	std::cout << "ScavTrap " << _Name << " attacks " << target << " who looses " << _AttackDamage << " HP !" << std::endl;
+	_EnergyPoints -= 1;
+	
 }
 
 void	ScavTrap::guardGate(void)
