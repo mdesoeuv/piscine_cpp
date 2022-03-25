@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:04:33 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/17 10:52:37 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 09:59:35 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class ClapTrap
 		unsigned int	_HitPoints;
 		unsigned int	_EnergyPoints;
 		unsigned int	_AttackDamage;
+
+		ClapTrap(std::string name, unsigned int hitPoints, unsigned int energy, unsigned int attackDamage);
 		
 	public :
 	

@@ -6,28 +6,24 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:11:19 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 10:46:54 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 09:58:06 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-const unsigned FragTrap::ATTACK_DAMAGE(30);
-const unsigned FragTrap::ENERGY(100);
-const unsigned FragTrap::HITPOINTS(100);
-
 FragTrap::FragTrap(void) : ClapTrap()
 {
-	_HitPoints = HITPOINTS;
-	_EnergyPoints = ENERGY;
-	_AttackDamage = ATTACK_DAMAGE;
+	_HitPoints = 100;
+	_EnergyPoints = 100;
+	_AttackDamage = 30;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	_HitPoints = HITPOINTS;
-	_EnergyPoints = ENERGY;
-	_AttackDamage = ATTACK_DAMAGE;
+	_HitPoints = 100;
+	_EnergyPoints = 100;
+	_AttackDamage = 30;
 	std::cout << "FragTrap constructor called" << std::endl;
 }
 

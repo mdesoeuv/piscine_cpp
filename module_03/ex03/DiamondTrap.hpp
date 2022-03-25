@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:22:10 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 15:42:22 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 11:10:13 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap& operator=(const DiamondTrap& source);
 		
 		void	whoAmI(void);
-		using ScavTrap::attack;
+		void	attack(const std::string& target);
 	
 };
 

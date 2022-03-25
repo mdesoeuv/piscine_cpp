@@ -6,37 +6,23 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:10:12 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 15:52:36 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 11:09:25 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-const unsigned ScavTrap::ATTACK_DAMAGE(20);
-const unsigned ScavTrap::ENERGY(50);
-const unsigned ScavTrap::HITPOINTS(10);
-
-ScavTrap::ScavTrap(void) : ClapTrap()
+ScavTrap::ScavTrap(void) : ClapTrap("", 100, 50, 20)
 {
-	_HitPoints = HITPOINTS;
-	_EnergyPoints = ENERGY;
-	_AttackDamage = ATTACK_DAMAGE;
-	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
 {
-	_HitPoints = HITPOINTS;
-	_EnergyPoints = ENERGY;
-	_AttackDamage = ATTACK_DAMAGE;
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& source) : ClapTrap(source)
 {
-	_HitPoints = source._HitPoints;
-	_EnergyPoints = source._EnergyPoints;
-	_AttackDamage = source._AttackDamage;
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
@@ -53,6 +39,23 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap& source)
 	this->_Name = source._Name;
 	
 	return (*this);
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (_HitPoints == 0)
+	{
+		std::cout << _Name << " is dead and can't perform this action" << std::endl;
+		return ;
+	}
+	if (_EnergyPoints < 1)
+	{
+		std::cout << _Name << " has not enough energy points to perform this action" << std::endl;
+		return ;
+	}
+	std::cout << "ScavTrap " << _Name << " attacks " << target << " who looses " << _AttackDamage << " HP !" << std::endl;
+	_EnergyPoints -= 1;
+	
 }
 
 void	ScavTrap::guardGate(void)

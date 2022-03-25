@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:55:01 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 15:40:53 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 11:12:04 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int main(void)
 		Michel.displayAttributes();
 		std::cout << "DiamondTrap :" << std::endl;
 		Jackie.displayAttributes();
+		Jackie.attack("Santa");
+		Jackie.guardGate();
+		Jackie.highFivesGuys();
 		Jackie.whoAmI();
 
 	}

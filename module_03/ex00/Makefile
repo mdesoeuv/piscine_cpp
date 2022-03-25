@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 14:30:05 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/18 13:55:47 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/25 09:40:08 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC := c++
 
 CFLAGS := -Wall -Werror -Wextra -g3 -std=c++98
 
-DEBUG := -fsanitize=address
+#DEBUG := -fsanitize=address
 
 SRCS := ClapTrap.cpp \
 		main.cpp

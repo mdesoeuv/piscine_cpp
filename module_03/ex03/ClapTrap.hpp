@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:04:33 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 14:22:16 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 11:09:15 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,21 @@ class ClapTrap
 		unsigned int	_EnergyPoints;
 		unsigned int	_AttackDamage;
 		
+		ClapTrap(const std::string& name, unsigned HitPoints, unsigned EnergyPoints, unsigned AttackDammage);
+		
 	public :
 	
 		ClapTrap(void);
 		ClapTrap(std::string name);
-		ClapTrap(const std::string& name, unsigned HitPoints, unsigned EnergyPoints, unsigned AttackDammage);
 		ClapTrap(const ClapTrap &source);
-		~ClapTrap(void);
+		virtual ~ClapTrap(void);
 		
 		ClapTrap	&operator=(const ClapTrap &source);
 
-		void	attack(const std::string& target);
-		void 	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-		void	displayAttributes(void);
+		virtual void	attack(const std::string& target);
+		void 			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
+		void			displayAttributes(void) const;
 		
 };
 
