@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:51:39 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/25 11:11:08 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 12:05:02 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"
 	std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& source) :	ClapTrap(), 
+DiamondTrap::DiamondTrap(const DiamondTrap& source) :	ClapTrap(source._Name + "_clap_name"), 
 														ScavTrap(),
 														FragTrap(),
 														_Name(source._Name)
