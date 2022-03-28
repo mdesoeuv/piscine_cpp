@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:31:34 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/22 10:11:52 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 09:39:57 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 
 int	main(void)
 {
+	Dog	basic;
+	{
+		Dog tmp = basic;
+	}
+	basic.displayFirstTenIdeas();
+
+	std::cout << std::endl;
+	
 	Animal *Animals[100];
 	
 	for (size_t i = 0; i < 50; i++)

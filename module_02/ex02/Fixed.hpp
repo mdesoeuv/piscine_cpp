@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:09:41 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 16:39:35 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 10:08:03 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define FIXED_HPP
 
 # include <iostream>
+
+class Fixed;
+
+std::ostream	&operator<<(std::ostream &out, const Fixed &value);
 
 class Fixed
 {
@@ -39,7 +43,6 @@ class Fixed
 		Fixed	operator++(int); //postfix
 		Fixed	operator--(void); //prefix
 		Fixed	operator--(int); //postfix
-		friend	std::ostream	&operator<<(std::ostream &out, const Fixed &value);
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;
