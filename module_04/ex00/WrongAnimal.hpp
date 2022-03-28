@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:07:20 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/18 18:40:06 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 09:31:32 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class WrongAnimal
 		WrongAnimal	&operator=(const WrongAnimal& source);
 
 		const std::string&	getType(void) const;
-		void	makeSound(void) const;
+		void				makeSound(void) const;
 
 };
 

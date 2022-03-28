@@ -37,5 +37,5 @@ WrongCat	&WrongCat::operator=(const WrongCat& source)
 
 void	WrongCat::makeSound(void) const
 {
-	std::cout << "meooowwwww" << std::endl;
+	std::cout << "wrong meooowwwww" << std::endl;
 }

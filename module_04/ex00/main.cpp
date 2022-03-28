@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 15:56:09 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 08:38:55 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 09:33:50 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ int	main(void)
 		delete minou;
 	}
 	{
-		const WrongAnimal* meta = new WrongAnimal();
-		const WrongAnimal* miaouss = new WrongCat();
+		const WrongAnimal*	meta = new WrongAnimal();
+		const WrongAnimal*	miaouss = new WrongCat();
+		const WrongCat*		wrongMinou = new WrongCat();
 
 		std::cout << std::endl;
 		std::cout << meta->getType() << " : ";
@@ -49,10 +50,14 @@ int	main(void)
 		std::cout << std::endl;
 		std::cout << miaouss->getType() << " : ";
 		miaouss->makeSound();
-		std::cout << std::endl << std::endl;
+		std::cout << std::endl;
+		std::cout << wrongMinou->getType() << " : ";
+		wrongMinou->makeSound();
+		std::cout << std::endl;
 
 		delete meta;
 		delete miaouss;
+		delete wrongMinou;
 	}
 	return 0;
 }
