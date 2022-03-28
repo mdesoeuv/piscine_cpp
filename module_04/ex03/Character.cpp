@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:48:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 15:05:23 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 11:15:59 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	Character::equip(AMateria* m)
 	}
 	int i = 0;
 	while (i < 4)
-	{	
+	{
 		if (slot[i] == 0)
 		{
 			inventory[i] = m;
@@ -132,4 +132,19 @@ void	Character::use(int index, ICharacter& target)
 		return ; 
 	}
 	inventory[index]->use(target);
+}
+
+AMateria	*Character::showMateria(int index)
+{
+	if (equippedMateriaNb == 0)
+	{
+		std::cout << "unable to show : no materia equipped" << std::endl;
+		return (NULL);
+	}
+	if (index >= 4 || slot[index] == 0)
+	{
+		std::cout << "unable to show : no materia equipped slot " << index << std::endl;
+		return (NULL); 
+	}
+	return (inventory[index]);
 }

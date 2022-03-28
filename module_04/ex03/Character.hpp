@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:52:20 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 14:10:29 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 11:11:07 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Character : public ICharacter
 		void				equip(AMateria* m);
 		void				unequip(int index);
 		void				use(int index, ICharacter& target);
+		AMateria			*showMateria(int index);
 
 	private:
 
