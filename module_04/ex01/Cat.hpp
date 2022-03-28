@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:35:00 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/28 10:01:57 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 11:02:33 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Cat : public Animal
 		Cat(const Cat& source);
 		~Cat(void);
 		Cat	&operator=(const Cat& source);
+		
 		void	makeSound(void) const;
 		void	displayFirstTenIdeas(void) const;
 		void	setIdea(const std::string& newIdea, size_t index);

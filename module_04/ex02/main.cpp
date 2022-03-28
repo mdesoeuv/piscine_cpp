@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:31:34 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 17:13:15 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 11:07:05 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	main(void)
 {
-	// Animal AnimalTotem; try to instantiate an object from abstract class
+	// Animal AnimalTotem; try to instantiate an object from abstract class => does not compile
 	
 	Animal *Animals[100];
 	

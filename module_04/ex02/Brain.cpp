@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:04:35 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 10:58:14 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 10:50:57 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 Brain::Brain(void)
 {
+	std::cout << "Brain default constructor called" << std::endl;
 	for (size_t i = 0; i < 100; i++)
 	{
 		ideas[i] = "Burn the world !!!";
@@ -23,6 +24,7 @@ Brain::Brain(void)
 
 Brain::Brain(const Brain& source)
 {
+	std::cout << "Brain constructor called" << std::endl;
 	for (size_t i = 0; i < 100; i++)
 	{
 		ideas[i] = source.ideas[i];		

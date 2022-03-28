@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:31:34 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/28 09:39:57 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 11:04:05 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	main(void)
 	{
 		delete Animals[i];
 	}
+
+	std::cout << std::endl;
 
 	return (0);
 }

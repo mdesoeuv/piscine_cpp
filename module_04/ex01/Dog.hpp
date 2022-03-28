@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:15:36 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/28 10:02:01 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 11:02:13 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Dog : public Animal
 		Dog(const Dog& source);
 		~Dog(void);
 		Dog	&operator=(const Dog& source);
+		
 		void	makeSound(void) const;
 		void	displayFirstTenIdeas(void) const;
 		void	setIdea(const std::string& newIdea, size_t index);

@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:07:20 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/21 17:00:12 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 11:06:03 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ class Animal
 		Animal(const Animal& source);
 		virtual ~Animal(void);
 		Animal	&operator=(const Animal& source);
+		
 		const std::string&	getType(void) const;
-		virtual void	makeSound(void) const;
-		virtual void	displayFirstTenIdeas(void) const = 0; // pure virtual method	
+		virtual void	makeSound(void) const = 0; // pure virtual method
+		virtual void	displayFirstTenIdeas(void) const = 0; // pure virtual method
 
 };
 
