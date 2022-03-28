@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:32:07 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 14:34:11 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 15:30:11 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ AMateria::~AMateria(void)
 std::string const	&AMateria::getType(void) const
 {
 	return (type);
+}
+
+AMateria	&AMateria::operator=(const AMateria& source)
+{
 }
 
 void	AMateria::use(ICharacter& target)

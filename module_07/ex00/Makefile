@@ -6,11 +6,11 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 15:56:17 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/28 14:40:22 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/28 15:46:37 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := Identify
+NAME := Template
 
 CXX := c++
 
@@ -18,8 +18,7 @@ CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -g3
 
 #DEBUG := -fsanitize=address		
 		
-SRCS := Base.cpp \
-		main.cpp
+SRCS := main.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 
@@ -32,7 +31,7 @@ all : $(NAME)
 $(NAME) :	$(OBJS_FILES)
 			$(CXX) $(CXXFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
 
-$(OBJS_DIR)%.o :	%.cpp Makefile A.hpp B.hpp C.hpp Base.hpp
+$(OBJS_DIR)%.o :	%.cpp Makefile
 					mkdir -p $(OBJS_DIR)
 					$(CXX) $(CXXFLAGS) $(DEBUG) -c $< -o $@
 
