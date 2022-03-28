@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 13:54:45 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/25 17:48:33 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 11:35:22 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	displayChar(const char input)
 void	displayInt(int input)
 {
 	std::cout << "Int : " << input << std::endl;
-
-	// if (input >= std::numeric_limits<int>)
 }
 
 void	displayFloat(float input)
@@ -51,15 +49,15 @@ int main(int ac, char **av)
 		std::cout << "usage: <value> as char, int, float or double" << std::endl;
 		return (1);
 	}
-	
+
 	double		conv;
 	std::string	input(av[1]);
-	
+
 	if (input.size() == 1)
 		conv = static_cast<char>(av[1][0]);
 	else
 		conv = std::atof(av[1]);
-		
+	
 	char	c = static_cast<char>(conv);
 	int		i = static_cast<int>(conv);
 	float	f = static_cast<float>(conv);
@@ -69,6 +67,6 @@ int main(int ac, char **av)
 	displayInt(i);
 	displayFloat(f);
 	displayDouble(d);
-	
+
 	return (0);
 }
