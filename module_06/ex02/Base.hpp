@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:58:16 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/28 13:59:26 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 14:22:32 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 class Base
 {
-	virtual ~Base(void);
+	public :
+		
+		virtual ~Base(void);
 };
 
 #endif
