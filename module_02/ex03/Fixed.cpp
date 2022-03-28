@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:00:27 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/23 11:22:37 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 10:30:10 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,14 @@ Fixed::~Fixed(void)
 
 Fixed	&Fixed::operator=(const Fixed &source)
 {
-	this->_raw_value = source.getRawBits();
+	this->_raw_value = source._raw_value;
 	return (*this);
 }
 
 bool	Fixed::operator>(const Fixed &rvalue) const
 {
 	std::cout << "custom > operator called" << std::endl;
-	if (this->_raw_value > rvalue._raw_value)
-		return (true);
-	return (false);
+	return (this->_raw_value > rvalue._raw_value);
 }
 
 bool	Fixed::operator<(const Fixed &rvalue) const
@@ -94,32 +92,38 @@ bool	Fixed::operator!=(const Fixed &rvalue) const
 
 Fixed	Fixed::operator+(const Fixed &rvalue) const
 {
-	Fixed	temp(this->toFloat() + rvalue.toFloat());
+	Fixed result = rvalue;
+	result._raw_value += this->_raw_value;
 
-	return (temp);
+	return (result);
 }
 
 Fixed	Fixed::operator-(const Fixed &rvalue) const
 {
-	Fixed	temp(this->toFloat() - rvalue.toFloat());
+	Fixed result = rvalue;
+	result._raw_value -= this->_raw_value;
 
-	return (temp);
+	return (result);
 }
 
 Fixed	Fixed::operator*(const Fixed &rvalue) const
 {
-	Fixed	temp(this->toFloat() * rvalue.toFloat());
-
-	return (temp);
+	long int x = this->_raw_value;
+	x *= rvalue._raw_value;
+	x >>= _fraction_bit_number;
+	Fixed result;
+	result._raw_value = x;
+	return (result);
 }
 
 Fixed	Fixed::operator/(const Fixed &rvalue) const
 {
-	Fixed	temp(this->toFloat() / rvalue.toFloat());
-
-	return (temp);
+	long int x = this->_raw_value << _fraction_bit_number;
+	x /= rvalue._raw_value;
+	Fixed result;
+	result._raw_value = x;
+	return (result);
 }
-
 /* prefix incrementation */
 
 Fixed	Fixed::operator++(void)
