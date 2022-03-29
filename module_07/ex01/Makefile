@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 15:56:17 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/29 13:13:36 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/29 13:16:18 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ CXX := c++
 
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -g3
 
-DEBUG := -fsanitize=address		
+DEBUG := -fsanitize=address
+
+HEADERS := iter.hpp
 		
 SRCS := main.cpp
 
@@ -31,7 +33,7 @@ all : $(NAME)
 $(NAME) :	$(OBJS_FILES)
 			$(CXX) $(CXXFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
 
-$(OBJS_DIR)%.o :	%.cpp Makefile
+$(OBJS_DIR)%.o :	%.cpp Makefile $(HEADERS)
 					mkdir -p $(OBJS_DIR)
 					$(CXX) $(CXXFLAGS) $(DEBUG) -c $< -o $@
 
