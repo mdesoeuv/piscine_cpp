@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 15:56:17 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/24 16:12:26 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/29 12:05:18 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX := c++
 
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -g3
 
-DEBUG := -fsanitize=address		
+#DEBUG := -fsanitize=address		
 		
 SRCS := Bureaucrat.cpp \
 		Form.cpp \

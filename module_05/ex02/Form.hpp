@@ -46,6 +46,7 @@ class Form
 		const	std::string& getName(void) const;
 		
 		void	beSigned(const Bureaucrat& peon);
+		void	execute(Bureaucrat const &executor) const;
 
 		class GradeTooHighException : public std::exception
 		{
@@ -79,7 +80,6 @@ class Form
 			
 		};
 
-		void			execute(Bureaucrat const &executor) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Form& rhs);
