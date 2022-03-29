@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 08:56:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 15:33:23 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 11:52:04 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(void)
 
 	std::cout << std::endl;
 
+	std::cout << "trying to execute an unsigned Form:" << std::endl;
 	Michel.executeForm(R);
 	Michel.signForm(R);
 	Michel.executeForm(R);
