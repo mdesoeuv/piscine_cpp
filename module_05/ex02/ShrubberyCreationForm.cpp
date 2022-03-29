@@ -6,13 +6,18 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 11:08:44 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 11:26:59 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 15:02:35 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <iostream>
 #include <fstream>
+
+// ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("default form", 145, 137), target("unknown")
+// {
+// 	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
+// }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& source) : Form(source), target(source.target)
 {
@@ -29,6 +34,10 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 	std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
+// ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs)
+// {
+// }
+
 void	ShrubberyCreationForm::specialFunction(void) const
 {
 	
@@ -36,7 +45,7 @@ void	ShrubberyCreationForm::specialFunction(void) const
 	if (!output_file)
 	{
 		std::cout << "error: cannot create output file" << std::endl;
-		throw Form::executionError;
+		throw Form::ExecutionErrorException();
 
 	}
 	output_file << "             v .   ._, |_  .,\n" 

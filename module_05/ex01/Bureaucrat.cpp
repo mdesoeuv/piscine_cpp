@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:15:34 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 11:09:37 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 11:01:58 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Bureaucrat::Bureaucrat(std::string Name, int Grade) : name(Name), gradeTooHigh("
 	if (Grade < 1)
 		throw gradeTooHigh;
 	else if (Grade > 150)
-		throw gradeTooLow;
+		throw GradeTooLowException("Bureaucrat::GradeTooLowException");
 	else
 		grade = Grade;
 }

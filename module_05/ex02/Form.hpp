@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 09:32:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 11:24:15 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 16:35:11 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,9 @@
 
 # include <string>
 # include "Bureaucrat.hpp"
-# include "GradeTooHighException.hpp"
-# include "GradeTooLowException.hpp"
-# include "ExecutionErrorException.hpp"
-
-class Bureaucrat;
 
 class Form
 {
-	protected:	
-		
-		void			checkRequirements(Bureaucrat const &executor) const;
-		virtual void	specialFunction(void) const = 0;
-	
 
 	private:
 
@@ -37,13 +27,19 @@ class Form
 		const int			execGrade;
 		
 		Form	&operator=(const Form& rhs);
+		
+	protected:	
+		
+		void			checkRequirements(Bureaucrat const &executor) const;
+		virtual void	specialFunction(void) const = 0;
 	
 	public:
 
 		Form(void);
 		Form(const std::string& Name, int SignGrade, int ExecGrade);
 		Form(const Form& source);
-		~Form(void);
+		virtual ~Form(void);
+		friend std::ostream& operator<<(std::ostream& os, const Form& rhs);
 		
 		int		getSignGrade(void) const;
 		int		getExecGrade(void) const;
@@ -51,15 +47,40 @@ class Form
 		const	std::string& getName(void) const;
 		
 		void	beSigned(const Bureaucrat& peon);
-		void	execute(Bureaucrat const &executor) const;
 
-		GradeTooHighException gradeTooHigh;
-		GradeTooLowException gradeTooLow;
-		ExecutionErrorException	formNotSigned;
-		ExecutionErrorException	executionError;
+		class GradeTooHighException : public std::exception
+		{
+			public:
 
+				const char *what(void) const throw ();
+
+		};
+		
+		class GradeTooLowException : public std::exception
+		{
+			public:
+
+				const char *what(void) const throw ();
+			
+		};
+		
+		class UnsignedFormException : public std::exception
+		{
+			public:
+
+				const char *what(void) const throw ();
+			
+		};
+		
+		class ExecutionErrorException : public std::exception
+		{
+			public:
+
+				const char *what(void) const throw ();
+			
+		};
+
+		void			execute(Bureaucrat const &executor) const;
 };
-
-std::ostream& operator<<(std::ostream& os, const Form& rhs);
 
 #endif

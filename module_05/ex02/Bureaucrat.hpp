@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:09:08 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 11:25:01 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 09:29:15 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # include <string>
 # include <iostream>
-# include "GradeTooLowException.hpp"
-# include "GradeTooHighException.hpp"
-# include "ExecutionErrorException.hpp"
-# include "Form.hpp"
 
 class Form;
 
@@ -33,9 +29,15 @@ class Bureaucrat
 
 	public:
 
-		GradeTooHighException gradeTooHigh;
+		struct GradeTooHighException : public std::exception
+		{
+			const char *what(void) const throw ();
+		};
 		
-		GradeTooLowException gradeTooLow;
+		struct GradeTooLowException : public std::exception
+		{
+			const char *what(void) const throw ();		
+		};
 
 		Bureaucrat(void);
 		Bureaucrat(std::string Name, int Grade);
