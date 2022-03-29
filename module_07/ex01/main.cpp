@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:26:44 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 13:41:10 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 13:45:02 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	displayElement(T t)
 int	main(void)
 {
 	std::vector<int> TabInt;
+	std::vector<float> TabFloat;
 	std::vector<std::string>	TabStr;
 
 	TabInt.push_back(42);
@@ -30,6 +31,13 @@ int	main(void)
 	TabInt.push_back(2022);
 
 	::iter(TabInt, TabInt.size(), displayElement<int>);
+	std::cout << std::endl;
+
+	TabFloat.push_back(42.46);
+	TabFloat.push_back(850000000000000000);
+	TabFloat.push_back(2022.1);
+
+	::iter(TabFloat, TabFloat.size(), displayElement<float>);
 	std::cout << std::endl;
 	
 	TabStr.push_back("bonjour");
