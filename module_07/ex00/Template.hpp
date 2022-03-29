@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.hpp                                           :+:      :+:    :+:   */
+/*   template.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 14:43:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/28 16:09:13 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/28 17:14:46 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef TEM
 
 template <typename T>
 void swap(T& a, T& b)
@@ -21,23 +23,15 @@ void swap(T& a, T& b)
 }
 
 template <typename T>
-T	min(T a, T b)
+T&	min(T& a, T& b)
 {
-	if (a == b)
-		return (b);
 	if (a < b)
 		return (a);
-	else
-		return (b);
+	return (b);
 }
 
 template <typename T>
-T	max(T a, T b)
+T&	max(T& a, T& b)
 {
-	if (a == b)
-		return (b);
-	if (a > b)
-		return (a);
-	else
-		return (b);
+	return (a > b ? a : b);
 }

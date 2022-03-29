@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:48:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/28 11:15:59 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 09:25:26 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ Character::~Character(void)
 
 Character	&Character::operator=(const Character& source)
 {
+	this->name = source.name;
 	for (size_t i = 0; i < 4; ++i)
 	{
 		if (slot[i])
