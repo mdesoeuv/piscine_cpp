@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 08:56:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 16:43:08 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 11:42:51 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(void)
 		else
 			std::cout << "Form not created" << std::endl;
 	}
-	catch(Intern::FormCreationErrorException& e)
+	catch(std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
