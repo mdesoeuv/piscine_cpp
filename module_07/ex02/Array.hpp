@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:45:47 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 15:09:15 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 15:18:55 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,19 @@ class Array
 		Array(const Array& source);
 		~Array(void);
 		Array	&operator=(const Array& rhs);
-		T& operator[](unsigned int index);
-	
-		unsigned int	size;
+		T& operator[](size_t index);
+		size_t	size(void);
+
+		struct IndexErrorException : public std::exception
+		{
+			const char *what(void) const throw ();
+		};
+		
 		
 	private:
 
-		T				*tab;
+		T		*tab;
+		size_t	_size;
 };
 
 #include "Array.tpp"

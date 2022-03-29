@@ -1,22 +1,22 @@
 
 template <class T>
-Array<T>::Array(void) : size(0)
+Array<T>::Array(void) : _size(0)
 {
 	std::cout << "Array default constructor called" << std::endl;
 }
 
 template <class T>
-Array<T>::Array(unsigned int n) : size(n)
+Array<T>::Array(unsigned int n) : _size(n)
 {
 	tab = new T[n]();
 	std::cout << "Array constructor called" << std::endl;
 }
 
 template <class T>
-Array<T>::Array(const Array& source) : size(source.size)
+Array<T>::Array(const Array& source) : _size(source._size)
 {
-	tab = new T[source.size]();
-	for (size_t i = 0; i < source.size; ++i)
+	tab = new T[source._size]();
+	for (size_t i = 0; i < source._size; ++i)
 	{
 		tab[i] = source.tab[i];
 	}
@@ -34,9 +34,9 @@ template <class T>
 Array<T>	&Array<T>::operator=(const Array& rhs)
 {
 	delete[] tab;
-	size = rhs.size;
-	tab = new T[rhs.size]();
-	for (size_t i = 0; i < rhs.size; ++i)
+	_size = rhs._size;
+	tab = new T[rhs._size]();
+	for (size_t i = 0; i < rhs._size; ++i)
 	{
 		tab[i] = rhs.tab[i];
 	}
@@ -45,9 +45,21 @@ Array<T>	&Array<T>::operator=(const Array& rhs)
 }
 
 template <class T>
-T&	Array<T>::operator[](unsigned int index)
+T&	Array<T>::operator[](size_t index)
 {
-	if (index < 0 ||  index >= size)
-		throw std::exception();
+	if (index < 0 ||  index >= _size)
+		throw IndexErrorException();
 	return (this->tab[index]);
+}
+
+template <class T>
+size_t	Array<T>::size(void)
+{
+	return (_size);
+}
+
+template <class T>
+const char * Array<T>::IndexErrorException::what(void) const throw ()
+{
+	return ("Array::IndexErrorException");
 }
