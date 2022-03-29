@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 09:32:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 10:34:25 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 11:39:43 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class Form
 		Form(const std::string& Name, int SignGrade, int ExecGrade);
 		Form(const Form& source);
 		~Form(void);
-		friend std::ostream& operator<<(std::ostream& os, const Form& rhs);
 		
 		int		getSignGrade(void) const;
 		int		getExecGrade(void) const;
@@ -59,5 +58,7 @@ class Form
 			
 		};
 };
+
+std::ostream& operator<<(std::ostream& os, const Form& rhs);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:09:08 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 10:28:08 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 11:39:32 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat& source);
 		~Bureaucrat(void);
 		
-		friend std::ostream	&operator<<(std::ostream &stream, const Bureaucrat &people);
 
 		const std::string	&getName(void) const;
 		int					getGrade(void) const;
@@ -60,5 +59,7 @@ class Bureaucrat
 		void				signForm(Form& form);
 
 };
+
+std::ostream	&operator<<(std::ostream &stream, const Bureaucrat &people);
 
 #endif

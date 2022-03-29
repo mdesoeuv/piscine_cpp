@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 09:32:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 16:35:11 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 11:40:05 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ class Form
 		Form(const std::string& Name, int SignGrade, int ExecGrade);
 		Form(const Form& source);
 		virtual ~Form(void);
-		friend std::ostream& operator<<(std::ostream& os, const Form& rhs);
 		
 		int		getSignGrade(void) const;
 		int		getExecGrade(void) const;
@@ -82,5 +81,7 @@ class Form
 
 		void			execute(Bureaucrat const &executor) const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Form& rhs);
 
 #endif

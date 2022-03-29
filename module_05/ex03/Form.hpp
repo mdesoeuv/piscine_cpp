@@ -39,7 +39,6 @@ class Form
 		Form(const std::string& Name, int SignGrade, int ExecGrade);
 		Form(const Form& source);
 		virtual ~Form(void);
-		friend std::ostream& operator<<(std::ostream& os, const Form& rhs);
 		
 		int		getSignGrade(void) const;
 		int		getExecGrade(void) const;
@@ -82,5 +81,7 @@ class Form
 
 		void			execute(Bureaucrat const &executor) const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Form& rhs);
 
 #endif
