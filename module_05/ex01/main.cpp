@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 08:56:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 11:42:34 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 11:50:04 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(void)
 
 	try
 	{
+		std::cout << "trying to create a Form with invalid required sign grade:" << std::endl;
 		Form	C("FORM ERROR A", 0, 150);
 	}
 	catch(std::exception& e)
@@ -34,6 +35,7 @@ int	main(void)
 
 	try
 	{
+		std::cout << "trying to create a Form with invalid required execution grade:" << std::endl;
 		Form	D("FORM ERROR B", 1, 151);
 	}
 	catch(std::exception& e)
