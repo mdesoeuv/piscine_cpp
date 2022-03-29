@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 09:32:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 10:14:43 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 10:34:25 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # include <string>
 # include "Bureaucrat.hpp"
-# include "GradeTooHighException.hpp"
-# include "GradeTooLowException.hpp"
-
-class Bureaucrat;
 
 class Form
 {
@@ -38,6 +34,7 @@ class Form
 		Form(const std::string& Name, int SignGrade, int ExecGrade);
 		Form(const Form& source);
 		~Form(void);
+		friend std::ostream& operator<<(std::ostream& os, const Form& rhs);
 		
 		int		getSignGrade(void) const;
 		int		getExecGrade(void) const;
@@ -46,12 +43,21 @@ class Form
 		
 		void	beSigned(const Bureaucrat& peon);
 
-		GradeTooHighException gradeTooHigh;
+		class GradeTooHighException : public std::exception
+		{
+			public:
+
+				const char *what(void) const throw ();
+
+		};
 		
-		GradeTooLowException gradeTooLow;
+		class GradeTooLowException : public std::exception
+		{
+			public:
 
+				const char *what(void) const throw ();
+			
+		};
 };
-
-std::ostream& operator<<(std::ostream& os, const Form& rhs);
 
 #endif

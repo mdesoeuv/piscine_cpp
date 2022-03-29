@@ -6,7 +6,7 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 15:56:17 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/29 10:03:57 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/24 08:50:32 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,9 @@ CXX := c++
 
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -g3
 
-#DEBUG := -fsanitize=address		
+DEBUG := -fsanitize=address		
 		
 SRCS := Bureaucrat.cpp \
-		GradeTooHighException.cpp \
-		GradeTooLowException.cpp \
 		main.cpp
 
 OBJS := $(SRCS:.cpp=.o)
@@ -34,7 +32,7 @@ all : $(NAME)
 $(NAME) :	$(OBJS_FILES)
 			$(CXX) $(CXXFLAGS) $(DEBUG) $(OBJS_FILES) -o $(NAME)
 
-$(OBJS_DIR)%.o :	%.cpp Makefile Bureaucrat.hpp GradeTooHighException.hpp GradeTooLowException.hpp
+$(OBJS_DIR)%.o :	%.cpp Makefile Bureaucrat.hpp
 					mkdir -p $(OBJS_DIR)
 					$(CXX) $(CXXFLAGS) $(DEBUG) -c $< -o $@
 

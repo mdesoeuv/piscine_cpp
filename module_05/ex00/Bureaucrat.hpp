@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:09:08 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 10:03:35 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 09:30:52 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <string>
 # include <iostream>
-# include "GradeTooHighException.hpp"
-# include "GradeTooLowException.hpp"
 
 class Bureaucrat
 {
@@ -29,23 +27,33 @@ class Bureaucrat
 
 	public:
 
+		class GradeTooHighException : public std::exception
+		{
+			public:
+
+				const char *what(void) const throw ();
+
+		};
+		
+		class GradeTooLowException : public std::exception
+		{
+			public:
+
+				const char *what(void) const throw ();
+			
+		};
 
 		Bureaucrat(void);
 		Bureaucrat(std::string Name, int Grade);
 		Bureaucrat(const Bureaucrat& source);
 		~Bureaucrat(void);
-
-		GradeTooHighException gradeTooLow;
-		
-		GradeTooLowException gradeTooHigh;
+		friend std::ostream	&operator<<(std::ostream &stream, const Bureaucrat &people);
 
 		const std::string	&getName(void) const;
 		int					getGrade(void) const;
-		void				upGrade(void);
-		void				downGrade(void);
+		void	upGrade(void);
+		void	downGrade(void);
 
 };
-
-std::ostream	&operator<<(std::ostream &stream, const Bureaucrat &people);
 
 #endif
