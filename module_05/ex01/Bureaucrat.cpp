@@ -6,25 +6,24 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:15:34 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 10:44:18 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 11:01:58 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
-Bureaucrat::Bureaucrat(void) : name("peon"), grade(150)
+Bureaucrat::Bureaucrat(void) : name("peon"), grade(150), gradeTooHigh("Bureaucrat::GradeToohighException"), gradeTooLow("Bureaucrat::GradeTooLowException") 
 {
 	std::cout << "Bureaucrat default constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string Name, int Grade) : name(Name)
+Bureaucrat::Bureaucrat(std::string Name, int Grade) : name(Name), gradeTooHigh("Bureaucrat::GradeToohighException"), gradeTooLow("Bureaucrat::GradeTooLowException")
 {
 	std::cout << "Bureaucrat constructor called" << std::endl;
 	if (Grade < 1)
-		throw GradeTooHighException();
+		throw gradeTooHigh;
 	else if (Grade > 150)
-		throw GradeTooLowException();
+		throw GradeTooLowException("Bureaucrat::GradeTooLowException");
 	else
 		grade = Grade;
 }
@@ -42,6 +41,8 @@ Bureaucrat::~Bureaucrat(void)
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat& source)
 {
 	grade = source.grade;
+	gradeTooLow = source.gradeTooLow;
+	gradeTooHigh = source.gradeTooHigh;
 
 	return (*this);
 }
@@ -66,7 +67,7 @@ int	Bureaucrat::getGrade(void) const
 void	Bureaucrat::upGrade(void)
 {
 	if (grade == 1)
-		throw GradeTooHighException();
+		throw gradeTooHigh;
 	else
 	{
 		grade--;
@@ -77,22 +78,12 @@ void	Bureaucrat::upGrade(void)
 void	Bureaucrat::downGrade(void)
 {
 	if (grade == 150)
-		throw GradeTooLowException();
+		throw gradeTooLow;
 	else
 	{
 		grade++;
 		std::cout << this->getName() << " leveled down and is now grade " << grade << std::endl;
 	}
-}
-
-const char *Bureaucrat::GradeTooHighException::what(void) const throw ()
-{
-	return ("Bureaucrat::GradeTooHighException");
-}
-
-const char *Bureaucrat::GradeTooLowException::what(void) const throw ()
-{
-	return ("Bureaucrat::GradeTooLowException");
 }
 
 void	Bureaucrat::signForm(Form& form)
@@ -107,7 +98,7 @@ void	Bureaucrat::signForm(Form& form)
 		form.beSigned(*this);
 		std::cout << this->getName() << " signed " << form.getName() << std::endl; 
 	}
-	catch(Form::GradeTooLowException& e)
+	catch(GradeTooLowException &e)
 	{
 		std::cerr << this->getName() << " couldn't sign " << form.getName() << " because "; 
 		std::cerr << e.what() << std::endl;

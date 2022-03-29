@@ -6,11 +6,12 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 08:56:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 09:10:28 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 10:53:17 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "GradeTooHighException.hpp"
 
 int	main(void)
 {
@@ -34,11 +35,7 @@ int	main(void)
 		Bureaucrat	Isildur("Isildur", 151);
 
 	}
-	catch(Bureaucrat::GradeTooHighException& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	catch(Bureaucrat::GradeTooLowException& e)
+	catch(std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}

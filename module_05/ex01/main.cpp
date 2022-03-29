@@ -6,12 +6,14 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 08:56:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 10:47:55 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 11:04:26 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "GradeTooLowException.hpp"
+#include "GradeTooHighException.hpp"
 
 int	main(void)
 {
@@ -27,11 +29,7 @@ int	main(void)
 	{
 		Form	C("FORM ERROR A", 0, 150);
 	}
-	catch(Form::GradeTooHighException& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(Form::GradeTooLowException& e)
+	catch(std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -40,11 +38,7 @@ int	main(void)
 	{
 		Form	D("FORM ERROR B", 1, 151);
 	}
-	catch(Form::GradeTooHighException& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch(Form::GradeTooLowException& e)
+	catch(std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
