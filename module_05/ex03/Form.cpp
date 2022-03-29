@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 09:42:43 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/24 14:59:05 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 11:58:54 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,20 +110,7 @@ void	Form::checkRequirements(Bureaucrat const &executor) const
 
 void	Form::execute(Bureaucrat const &executor) const
 {
-	try
-	{
-		checkRequirements(executor);
-	}
-	catch(Form::UnsignedFormException& e)
-	{
-		std::cerr << e.what() << std::endl;
-		throw Form::ExecutionErrorException();
-		
-	}
-	catch(Form::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << std::endl;
-		throw Form::ExecutionErrorException();
-	}
+
+	checkRequirements(executor);
 	specialFunction();
 }

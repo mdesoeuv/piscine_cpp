@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 08:56:57 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 11:42:51 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 12:04:43 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ int	main(void)
 		Form	*A = Kevin.makeForm("robotomy request", "Roger");
 		Michel.signForm(*A);
 		Michel.executeForm(*A);
+		std::cout << std::endl;
 		delete A;
+		std::cout << std::endl << "trying to create unknown Form:" << std::endl;
 		Form*	B = Kevin.makeForm("dumb request", "Roger");
 		if (B)
 		{
@@ -39,6 +41,7 @@ int	main(void)
 		}
 		else
 			std::cout << "Form not created" << std::endl;
+		delete B;
 	}
 	catch(std::exception& e)
 	{
