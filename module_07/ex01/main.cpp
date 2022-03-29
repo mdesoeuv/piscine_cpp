@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:26:44 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 13:45:02 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 15:05:01 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void)
 	TabInt.push_back(85);
 	TabInt.push_back(2022);
 
-	::iter(TabInt, TabInt.size(), displayElement<int>);
+	iter(TabInt, TabInt.size(), displayElement<int>);
 	std::cout << std::endl;
 
 	TabFloat.push_back(42.46);

@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:33:30 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 13:14:43 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/29 15:07:42 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ int	main(void)
 	std::cout << "b : " << b << std::endl;
 
 	std::cout << "swapping int :" << std::endl;
-	::swap<int>(a, b);
+	swap(a, b);
 
 	std::cout << "a : " << a << std::endl;
 	std::cout << "b : " << b << std::endl << std::endl;
-	std::cout << "min = " <<  ::min<int>(a, b) << std::endl;
-	std::cout << "max = " <<  ::max<int>(a, b) << std::endl;
+	std::cout << "min = " << min(a, b) << std::endl;
+	std::cout << "max = " << max(a, b) << std::endl;
 
 
 	std::string	s1 = "bonjour";
@@ -37,12 +37,12 @@ int	main(void)
 	std::cout << "b : " << s2 << std::endl;
 	
 	std::cout << "swapping strings :" << std::endl;
-	::swap<std::string>(s1, s2);
+	swap(s1, s2);
 
 	std::cout << "a : " << s1 << std::endl;
 	std::cout << "b : " << s2 << std::endl;
-	std::cout << "min = " << ::min<std::string>(s1, s2) << std::endl;
-	std::cout << "max = " << ::max<std::string>(s1, s2) << std::endl;
+	std::cout << "min = " << min(s1, s2) << std::endl;
+	std::cout << "max = " << max(s1, s2) << std::endl;
 
 	
 
