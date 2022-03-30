@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 13:54:45 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/28 11:59:46 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/30 09:07:36 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,28 @@ void	displayInt(int i, std::string input)
 		std::cout << i << std::endl;
 }
 
-void	displayFloat(float f)
+void	displayFloat(float f, std::string input)
 {
-	std::cout << "Float " << f << "f" << std::endl;
+	std::cout << "Float ";
+	if (input == "nan" || input == "inff" || input == "+inff" || input == "-inff")
+		std::cout << input << std::endl;
+	else if (input == "inf" || input == "+inf" || input == "-inf")
+		std::cout << input << "f";
+	else
+		std::cout << f << "f" << std::endl;
 }
 
-void	displayDouble(double d)
+void	displayDouble(double d, std::string input)
 {
-	std::cout << "Double : " << d << std::endl;
+	std::cout << "Double : ";
+	if (input == "nan" || input == "inf" || input == "+inf" || input == "-inf")
+		std::cout << input << std::endl;
+	else if (input == "inff")
+		std::cout << input.substr(0, 3) << std::endl;
+	else if (input == "+inff" || input == "-inff")
+		std::cout << input.substr(0, 4) << std::endl;
+	else
+		std::cout << d << std::endl;
 }
 
 int main(int ac, char **av)
@@ -78,8 +92,8 @@ int main(int ac, char **av)
 
 	displayChar(c, input);
 	displayInt(i, input);
-	displayFloat(f);
-	displayDouble(d);
+	displayFloat(f, input);
+	displayDouble(d, input);
 
 	return (0);
 }
