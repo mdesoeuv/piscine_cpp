@@ -6,11 +6,11 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 15:56:17 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/29 15:09:34 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/30 10:42:49 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := Array
+NAME := EasyFind
 
 CXX := c++
 
@@ -18,8 +18,7 @@ CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -g3
 
 DEBUG := -fsanitize=address
 
-HEADERS :=	Array.hpp \
-			Array.tpp
+HEADERS :=	easyfind.hpp
 		
 SRCS :=	main.cpp
 
