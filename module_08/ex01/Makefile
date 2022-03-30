@@ -6,11 +6,11 @@
 #    By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 15:56:17 by mdesoeuv          #+#    #+#              #
-#    Updated: 2022/03/30 10:42:49 by mdesoeuv         ###   ########lyon.fr    #
+#    Updated: 2022/03/30 12:25:55 by mdesoeuv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := EasyFind
+NAME := Span
 
 CXX := c++
 
@@ -18,9 +18,10 @@ CXXFLAGS := -Wall -Werror -Wextra -std=c++98 -g3
 
 DEBUG := -fsanitize=address
 
-HEADERS :=	easyfind.hpp
+HEADERS :=	Span.hpp
 		
-SRCS :=	main.cpp
+SRCS :=	main.cpp \
+		Span.cpp
 
 OBJS := $(SRCS:.cpp=.o)
 
