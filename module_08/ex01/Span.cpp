@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:16:12 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/31 11:29:51 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/31 12:00:52 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,9 @@ int	Span::longestSpan(void)
 	return (max - min);
 }
 
-void	Span::addRange(std::vector<int>::iterator startIter, std::vector<int>::iterator endIter)
+void	Span::addRange(std::vector<int>::const_iterator startIter, std::vector<int>::const_iterator endIter) // conv en const ok mais pas l'inverse
 {
-	for (std::vector<int>::iterator iter = startIter; this->tab.size() <= this->_maxSize && iter != endIter; ++iter)
+	for (std::vector<int>::const_iterator iter = startIter; this->tab.size() <= this->_maxSize && iter != endIter; ++iter)
 	{
 		tab.push_back(*iter);
 	}
