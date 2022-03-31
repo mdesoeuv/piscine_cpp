@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 12:18:56 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/30 12:30:26 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/31 11:24:22 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,20 @@ int	main(void)
 		std::cerr << e.what() << '\n';
 	}
 	
+	Span	spanThousands(100000);
+	std::vector<int> range;
+	
+	for (int i = 0; i < 10000; ++i)
+	{
+		range.push_back(42);
+	}
+	
+	spanThousands.addRange(range.begin(), range.end());
+
+	for (int i = 0; i < 10; ++i)
+	{
+		std::cout << spanThousands[i] << std::endl;
+	}
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:45:38 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 15:27:17 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/31 10:12:57 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,19 @@ int	main(void)
 	TabStr[0] = "coucou";
 		std::cout << std::endl << "Tab 1 :" << std::endl;
 	for (size_t i = 0; i < TabStr.size(); ++i)
+	{
+		std::cout << TabStr[i] << std::endl;
+	}
+	std::cout << std::endl << "Tab 2 :" << std::endl;
+	for (size_t i = 0; i < TabCopy.size(); ++i)
+	{
+		std::cout << TabCopy[i] << std::endl;
+	}
+	std::cout << std::endl;
+
+	std::cout << "assigning Tab1 to Tab2 :" << std::endl;
+	TabCopy = TabStr;
+		for (size_t i = 0; i < TabStr.size(); ++i)
 	{
 		std::cout << TabStr[i] << std::endl;
 	}

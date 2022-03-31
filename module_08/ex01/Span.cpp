@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:16:12 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/30 12:25:51 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/31 11:29:51 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ Span&	Span::operator=(const Span& rhs)
 	this->tab = rhs.tab;
 
 	return (*this);
+}
+
+int&	Span::operator[](size_t index)
+{
+	if (index >= this->tab.size())
+		throw SpanIndexException();
+	
+	return (tab[index]);
 }
 
 void	Span::addNumber(unsigned int n)
@@ -82,6 +90,14 @@ int	Span::longestSpan(void)
 	return (max - min);
 }
 
+void	Span::addRange(std::vector<int>::iterator startIter, std::vector<int>::iterator endIter)
+{
+	for (std::vector<int>::iterator iter = startIter; this->tab.size() <= this->_maxSize && iter != endIter; ++iter)
+	{
+		tab.push_back(*iter);
+	}
+}
+
 const char * Span::SpanEmptyException::what(void) const throw()
 {
 	return ("Error: Span is empty");
@@ -95,4 +111,9 @@ const char * Span::SpanFullException::what(void) const throw()
 const char * Span::SpanRequirementsException::what(void) const throw()
 {
 	return ("Error: Span does not contains enough elements");
+}
+
+const char * Span::SpanIndexException::what(void) const throw()
+{
+	return ("Error: Span index");
 }
