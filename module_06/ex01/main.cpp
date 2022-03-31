@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 12:01:35 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/28 13:56:40 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/31 09:36:06 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ int	main(void)
 	Data	*data_ptr = new Data();
 	uintptr_t genericPtr;
 
-	std::cout << data_ptr->type << " " << data_ptr->number << std::endl;
+	std::cout << "data.type : " << data_ptr->type << ", data.number : " << data_ptr->number << std::endl;
 
 	genericPtr = serialize(data_ptr);
 	data_ptr = deserialize(genericPtr);
 
-	std::cout << data_ptr->type << " " << data_ptr->number << std::endl;
+	std::cout << "data.type : " << data_ptr->type << ", data.number : " << data_ptr->number << std::endl;
 	
 	delete data_ptr;
 	return (0);

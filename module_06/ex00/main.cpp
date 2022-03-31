@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 13:54:45 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/30 09:07:36 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/03/31 09:28:07 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void	displayInt(int i, std::string input)
 void	displayFloat(float f, std::string input)
 {
 	std::cout << "Float ";
-	if (input == "nan" || input == "inff" || input == "+inff" || input == "-inff")
+	if (input == "inff" || input == "+inff" || input == "-inff")
 		std::cout << input << std::endl;
-	else if (input == "inf" || input == "+inf" || input == "-inf")
-		std::cout << input << "f";
+	else if (input == "inf" || input == "+inf" || input == "-inf" || input == "nan")
+		std::cout << input << "f" << std::endl;
 	else
 		std::cout << f << "f" << std::endl;
 }
@@ -59,6 +59,8 @@ void	displayDouble(double d, std::string input)
 		std::cout << input.substr(0, 3) << std::endl;
 	else if (input == "+inff" || input == "-inff")
 		std::cout << input.substr(0, 4) << std::endl;
+	else if (input == "nanf")
+		std::cout << "nan" << std::endl;
 	else
 		std::cout << d << std::endl;
 }
