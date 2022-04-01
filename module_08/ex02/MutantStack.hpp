@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:55:18 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/31 18:35:23 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/04/01 09:24:10 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class MutantStack : public std::stack<T, Container>
 		{
 			std::cout << "MutantStack copy constructor called" << std::endl;
 		}
-		
+
 		~MutantStack(void)
 		{
 			std::cout << "MutantStack destructor called" << std::endl;

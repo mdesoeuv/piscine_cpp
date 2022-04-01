@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:10:26 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/31 11:59:52 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/04/01 09:31:12 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Span
 		int				shortestSpan(void);
 		int				longestSpan(void);
 		void			addRange(std::vector<int>::const_iterator startIter, std::vector<int>::const_iterator endIter);
+		size_t			size(void);
 
 		class	SpanFullException : public std::exception
 		{

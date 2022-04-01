@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:16:12 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/31 12:00:52 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/04/01 09:55:02 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <algorithm>
 
-Span::Span(void) : _maxSize(0)
+Span::Span(void) : _maxSize(0), tab(0)
 {
 	std::cout << "Span default constructor called" << std::endl;
 }
@@ -44,10 +44,15 @@ Span&	Span::operator=(const Span& rhs)
 
 int&	Span::operator[](size_t index)
 {
-	if (index >= this->tab.size())
+	if (index >= this->tab.max_size())
 		throw SpanIndexException();
 	
 	return (tab[index]);
+}
+
+size_t	Span::size(void)
+{
+	return (tab.size());
 }
 
 void	Span::addNumber(unsigned int n)
@@ -92,10 +97,14 @@ int	Span::longestSpan(void)
 
 void	Span::addRange(std::vector<int>::const_iterator startIter, std::vector<int>::const_iterator endIter) // conv en const ok mais pas l'inverse
 {
-	for (std::vector<int>::const_iterator iter = startIter; this->tab.size() <= this->_maxSize && iter != endIter; ++iter)
+	std::vector<int>::const_iterator iter;
+	
+	for (iter = startIter; this->tab.size() < this->_maxSize && iter != endIter; ++iter)
 	{
 		tab.push_back(*iter);
 	}
+	if (iter != endIter)
+		throw SpanFullException();
 }
 
 const char * Span::SpanEmptyException::what(void) const throw()

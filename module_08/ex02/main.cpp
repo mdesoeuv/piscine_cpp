@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:30:25 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/31 18:52:02 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/04/01 10:05:00 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,29 @@ int	main(void)
 		
 		std::cout << std::endl << "MutantStack size : " <<  myStack.size() << std::endl << std::endl;
 
-		MutantStack<int>::iterator	iter = myStack.begin();
+		
+		std::cout << std::endl;
 
+		std::cout << "Creating a copy by assignation :" << std::endl;
+		MutantStack<int>	mutantStackCopy;
+
+		mutantStackCopy = myStack;
+		for (MutantStack<int>::iterator it = mutantStackCopy.begin(); it < mutantStackCopy.end(); ++it)
+		{
+			std::cout << *it << std::endl;
+		}
+
+		std::cout << std::endl << "Constructing a copy  :" << std::endl;
+		MutantStack<int>	copyOfaCopy(mutantStackCopy);
+		for (MutantStack<int>::iterator it = copyOfaCopy.begin(); it < copyOfaCopy.end(); ++it)
+		{
+			std::cout << *it << std::endl;
+		}
+		std::cout << std::endl;
+		
+		std::cout << "Testing iterator incrementation :" << std::endl;
+		MutantStack<int>::iterator	iter = myStack.begin();
+		
 		std::cout << *(++iter) << std::endl;
 		std::cout << *(iter) << std::endl;
 		std::cout << *(iter++) << std::endl;
@@ -42,7 +63,6 @@ int	main(void)
 		std::cout << *(iter) << std::endl;
 		std::cout << *(iter--) << std::endl;
 		std::cout << *(iter) << std::endl;
-		
 		std::cout << std::endl;
 	}
 	{
@@ -63,6 +83,7 @@ int	main(void)
 		
 		std::cout << std::endl << "List size : " <<  myStack.size() << std::endl << std::endl;
 
+		std::cout << "Testing iterator incrementation :" << std::endl;
 		std::list<int>::iterator	iter = myStack.begin();
 
 		std::cout << *(++iter) << std::endl;
