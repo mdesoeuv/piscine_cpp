@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:10:26 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/04/01 09:31:12 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/04/01 15:18:34 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Span
 		Span&	operator=(const Span& rhs);
 		int&	operator[](size_t index);
 
-		void			addNumber(unsigned int n);
+		void			addNumber(int n);
 		int				shortestSpan(void);
 		int				longestSpan(void);
 		void			addRange(std::vector<int>::const_iterator startIter, std::vector<int>::const_iterator endIter);

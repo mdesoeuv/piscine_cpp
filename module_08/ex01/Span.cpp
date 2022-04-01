@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:16:12 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/04/01 09:55:02 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/04/01 15:21:12 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ size_t	Span::size(void)
 	return (tab.size());
 }
 
-void	Span::addNumber(unsigned int n)
+void	Span::addNumber(int n)
 {
 	if (tab.size() == _maxSize)
 		throw SpanFullException();

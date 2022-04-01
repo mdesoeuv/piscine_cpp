@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 12:18:56 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/04/01 09:57:43 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/04/01 15:20:55 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(void)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << "Span size : " << spanSingle.size() << std::endl;
 	
 	std::cout << std::endl << "trying to call Shortest and Longest Span function without enough elements :"  << std::endl;
 	try
