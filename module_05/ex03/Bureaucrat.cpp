@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:15:34 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 11:59:15 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/05/05 11:20:51 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,10 @@ void	Bureaucrat::executeForm(Form const& form)
 		std::cerr << getName() << " couldn't execute Form " << form.getName() << " because " << e.what() << std::endl;
 	}
 	catch (Form::GradeTooLowException& e)
+	{
+		std::cerr << getName() << " couldn't execute Form " << form.getName() << " because " << e.what() << std::endl;
+	}
+	catch (Form::ExecutionErrorException& e)
 	{
 		std::cerr << getName() << " couldn't execute Form " << form.getName() << " because " << e.what() << std::endl;
 	}
