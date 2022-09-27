@@ -6,7 +6,7 @@
 /*   By: mdesoeuv <mdesoeuv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 13:45:47 by mdesoeuv          #+#    #+#             */
-/*   Updated: 2022/03/29 15:18:55 by mdesoeuv         ###   ########lyon.fr   */
+/*   Updated: 2022/09/27 17:43:56 by mdesoeuv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class Array
 		~Array(void);
 		Array	&operator=(const Array& rhs);
 		T& operator[](size_t index);
-		size_t	size(void);
+		const T& operator[](size_t index) const;
+		size_t	size(void) const;
 
 		struct IndexErrorException : public std::exception
 		{

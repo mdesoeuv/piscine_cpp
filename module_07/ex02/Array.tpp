@@ -2,6 +2,7 @@
 template <class T>
 Array<T>::Array(void) : _size(0)
 {
+	tab = NULL;
 	std::cout << "Array default constructor called" << std::endl;
 }
 
@@ -53,7 +54,15 @@ T&	Array<T>::operator[](size_t index)
 }
 
 template <class T>
-size_t	Array<T>::size(void)
+const T&	Array<T>::operator[](size_t index) const
+{
+	if (index < 0 ||  index >= _size)
+		throw IndexErrorException();
+	return (this->tab[index]);
+}
+
+template <class T>
+size_t	Array<T>::size(void) const
 {
 	return (_size);
 }
